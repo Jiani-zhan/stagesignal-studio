@@ -6,6 +6,8 @@ This script uses only Python standard library components.
 
 from __future__ import annotations
 
+import argparse
+import csv
 import datetime as dt
 import json
 import math
@@ -29,6 +31,7 @@ ROOT = Path(__file__).resolve().parents[1]
 ASSETS_DATA = ROOT / "assets" / "data"
 SOURCE_XLSX = ROOT / "Final presentation" / "Data Collection & Visualization.xlsx"
 SOURCE_SHEET = "Broadway Revenue"
+CURATED_EVENTS_CSV = ASSETS_DATA / "events_comps.csv"
 
 
 @dataclass
@@ -48,12 +51,17 @@ class WeeklyRecord:
     diff_pct: float
 
 
-def ensure_output_dir() -> None:
-    ASSETS_DATA.mkdir(parents=True, exist_ok=True)
+def ensure_output_dir(output_dir: Path) -> None:
+    output_dir.mkdir(parents=True, exist_ok=True)
 
 
-def load_weekly_records() -> List[WeeklyRecord]:
-    wb = XlsxWorkbook(SOURCE_XLSX)
+def date_to_excel_serial(value: dt.date) -> float:
+    base = dt.date(1899, 12, 30)
+    return float((value - base).days)
+
+
+def load_weekly_records_from_source_xlsx(source_xlsx: Path) -> List[WeeklyRecord]:
+    wb = XlsxWorkbook(source_xlsx)
     try:
         rows = wb.read_rows(SOURCE_SHEET)
     finally:
@@ -63,43 +71,202 @@ def load_weekly_records() -> List[WeeklyRecord]:
     for idx, row in enumerate(rows[2:], start=2):
         if len(row) < 15:
             continue
-        parsed = {
-            "week_serial": parse_number(row[0]),
-            "this_week_gross": parse_number(row[2]),
-            "last_week_gross": parse_number(row[3]),
-            "diff_dollars": parse_number(row[4]),
-            "average_ticket": parse_number(row[7]),
-            "top_ticket": parse_number(row[8]),
-            "seats_sold": parse_number(row[9]),
-            "total_seats": parse_number(row[10]),
-            "this_week_pct": parse_number(row[12]),
-            "last_week_pct": parse_number(row[13]),
-            "diff_pct": parse_number(row[14]),
-        }
-        if any(value is None for value in parsed.values()):
+        week_serial = parse_number(row[0])
+        this_week_gross = parse_number(row[2])
+        last_week_gross = parse_number(row[3])
+        diff_dollars = parse_number(row[4])
+        average_ticket = parse_number(row[7])
+        top_ticket = parse_number(row[8])
+        seats_sold = parse_number(row[9])
+        total_seats = parse_number(row[10])
+        this_week_pct = parse_number(row[12])
+        last_week_pct = parse_number(row[13])
+        diff_pct = parse_number(row[14])
+
+        if any(
+            value is None
+            for value in [
+                week_serial,
+                this_week_gross,
+                last_week_gross,
+                diff_dollars,
+                average_ticket,
+                top_ticket,
+                seats_sold,
+                total_seats,
+                this_week_pct,
+                last_week_pct,
+                diff_pct,
+            ]
+        ):
             continue
 
-        week_serial = float(parsed["week_serial"])
+        assert week_serial is not None
+        assert this_week_gross is not None
+        assert last_week_gross is not None
+        assert diff_dollars is not None
+        assert average_ticket is not None
+        assert top_ticket is not None
+        assert seats_sold is not None
+        assert total_seats is not None
+        assert this_week_pct is not None
+        assert last_week_pct is not None
+        assert diff_pct is not None
+
+        week_serial = float(week_serial)
         records.append(
             WeeklyRecord(
                 row_id=idx,
                 week_serial=week_serial,
                 week_date=excel_serial_to_date(week_serial).isoformat(),
-                this_week_gross=float(parsed["this_week_gross"]),
-                last_week_gross=float(parsed["last_week_gross"]),
-                diff_dollars=float(parsed["diff_dollars"]),
-                average_ticket=float(parsed["average_ticket"]),
-                top_ticket=float(parsed["top_ticket"]),
-                seats_sold=float(parsed["seats_sold"]),
-                total_seats=float(parsed["total_seats"]),
-                this_week_pct=float(parsed["this_week_pct"]),
-                last_week_pct=float(parsed["last_week_pct"]),
-                diff_pct=float(parsed["diff_pct"]),
+                this_week_gross=float(this_week_gross),
+                last_week_gross=float(last_week_gross),
+                diff_dollars=float(diff_dollars),
+                average_ticket=float(average_ticket),
+                top_ticket=float(top_ticket),
+                seats_sold=float(seats_sold),
+                total_seats=float(total_seats),
+                this_week_pct=float(this_week_pct),
+                last_week_pct=float(last_week_pct),
+                diff_pct=float(diff_pct),
             )
         )
     if not records:
         raise RuntimeError("No valid weekly records were parsed from source workbook.")
     return records
+
+
+def parse_iso_date(value: str) -> dt.date | None:
+    text = (value or "").strip()
+    if not text:
+        return None
+    try:
+        return dt.date.fromisoformat(text)
+    except ValueError:
+        pass
+    try:
+        return dt.datetime.fromisoformat(text).date()
+    except ValueError:
+        return None
+
+
+def load_weekly_records_from_events_csv(events_csv: Path) -> List[WeeklyRecord]:
+    if not events_csv.exists():
+        raise FileNotFoundError(f"Curated events CSV not found: {events_csv}")
+
+    raw_rows: List[dict] = []
+    with events_csv.open("r", encoding="utf-8", newline="") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            event_date = parse_iso_date(str(row.get("event_date", "")))
+            ticket_mid = parse_number(str(row.get("ticket_price_mid", "")))
+            ticket_high = parse_number(str(row.get("ticket_price_high", "")))
+            attendance = parse_number(str(row.get("attendance_proxy", "")))
+            capacity = parse_number(str(row.get("venue_capacity", "")))
+            sellout_proxy = parse_number(str(row.get("sellout_proxy", "")))
+
+            if (
+                event_date is None
+                or ticket_mid is None
+                or attendance is None
+                or capacity is None
+                or ticket_mid <= 0
+                or attendance <= 0
+                or capacity <= 0
+            ):
+                continue
+
+            week_serial = date_to_excel_serial(event_date)
+            total_seats = max(capacity * 8.0, attendance)
+            this_week_pct = (
+                float(sellout_proxy)
+                if sellout_proxy is not None
+                else float(attendance / total_seats)
+            )
+            average_ticket = float(ticket_mid)
+            top_ticket = (
+                float(ticket_high)
+                if ticket_high is not None and ticket_high > 0
+                else float(average_ticket * 1.8)
+            )
+            this_week_gross = float(average_ticket * attendance)
+
+            raw_rows.append(
+                {
+                    "week_serial": week_serial,
+                    "week_date": event_date.isoformat(),
+                    "this_week_gross": this_week_gross,
+                    "average_ticket": average_ticket,
+                    "top_ticket": top_ticket,
+                    "seats_sold": float(attendance),
+                    "total_seats": float(total_seats),
+                    "this_week_pct": float(this_week_pct),
+                }
+            )
+
+    raw_rows.sort(key=lambda row: row["week_serial"])
+    if not raw_rows:
+        raise RuntimeError("No valid rows parsed from curated events CSV.")
+
+    records: List[WeeklyRecord] = []
+    prev_gross = float(raw_rows[0]["this_week_gross"])
+    prev_pct = float(raw_rows[0]["this_week_pct"])
+    for idx, row in enumerate(raw_rows, start=1):
+        this_week_gross = float(row["this_week_gross"])
+        this_week_pct = float(row["this_week_pct"])
+        last_week_gross = prev_gross if idx > 1 else this_week_gross
+        last_week_pct = prev_pct if idx > 1 else this_week_pct
+
+        records.append(
+            WeeklyRecord(
+                row_id=idx,
+                week_serial=float(row["week_serial"]),
+                week_date=str(row["week_date"]),
+                this_week_gross=this_week_gross,
+                last_week_gross=last_week_gross,
+                diff_dollars=this_week_gross - last_week_gross,
+                average_ticket=float(row["average_ticket"]),
+                top_ticket=float(row["top_ticket"]),
+                seats_sold=float(row["seats_sold"]),
+                total_seats=float(row["total_seats"]),
+                this_week_pct=this_week_pct,
+                last_week_pct=last_week_pct,
+                diff_pct=this_week_pct - last_week_pct,
+            )
+        )
+
+        prev_gross = this_week_gross
+        prev_pct = this_week_pct
+
+    return records
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="Train deterministic StageSignal model suite."
+    )
+    parser.add_argument(
+        "--events-csv",
+        type=Path,
+        default=None,
+        help=(
+            "Optional curated events CSV path. When provided, models are trained from "
+            "downloadable events_comps.csv instead of the raw workbook."
+        ),
+    )
+    parser.add_argument(
+        "--source-xlsx",
+        type=Path,
+        default=SOURCE_XLSX,
+        help="Raw workbook path used when --events-csv is not provided.",
+    )
+    parser.add_argument(
+        "--output-dir",
+        type=Path,
+        default=ASSETS_DATA,
+        help="Directory where model JSON artifacts will be written.",
+    )
+    return parser.parse_args()
 
 
 def deterministic_split(
@@ -123,6 +290,22 @@ def stdev(values: Sequence[float]) -> float:
     variance = sum((v - mu) ** 2 for v in values) / len(values)
     std = math.sqrt(variance)
     return std if std > 1e-12 else 1.0
+
+
+def quantile(values: Sequence[float], q: float) -> float:
+    if not values:
+        return 0.0
+    ordered = sorted(values)
+    if len(ordered) == 1:
+        return float(ordered[0])
+    clamped = max(0.0, min(1.0, q))
+    idx = (len(ordered) - 1) * clamped
+    lo = int(math.floor(idx))
+    hi = int(math.ceil(idx))
+    if lo == hi:
+        return float(ordered[lo])
+    weight = idx - lo
+    return float((1.0 - weight) * ordered[lo] + weight * ordered[hi])
 
 
 def fit_standardizer(matrix: List[List[float]]) -> tuple[List[float], List[float]]:
@@ -365,6 +548,17 @@ def train_regression_model(
             "means": {feature_names[i]: means[i] for i in range(len(feature_names))},
             "stds": {feature_names[i]: stds[i] for i in range(len(feature_names))},
         },
+        "feature_distribution": {
+            feature_names[i]: {
+                "min": min(row[i] for row in x_all),
+                "p25": quantile([row[i] for row in x_all], 0.25),
+                "median": quantile([row[i] for row in x_all], 0.5),
+                "p75": quantile([row[i] for row in x_all], 0.75),
+                "max": max(row[i] for row in x_all),
+                "mean": mean([row[i] for row in x_all]),
+            }
+            for i in range(len(feature_names))
+        },
     }
 
     return performance, predictions, features
@@ -395,7 +589,9 @@ def train_classifier(
     y_pred = [1 if p >= 0.5 else 0 for p in probs]
 
     metrics = classification_metrics(y_test, y_pred)
-    accuracy = float(metrics["accuracy"])
+    accuracy_value = metrics.get("accuracy", 0.0)
+    assert isinstance(accuracy_value, float)
+    accuracy = accuracy_value
     pass_flag = accuracy >= ACCURACY_THRESHOLD
 
     performance = {
@@ -446,6 +642,17 @@ def train_classifier(
             "means": {feature_names[i]: means[i] for i in range(len(feature_names))},
             "stds": {feature_names[i]: stds[i] for i in range(len(feature_names))},
         },
+        "feature_distribution": {
+            feature_names[i]: {
+                "min": min(row[i] for row in x_all),
+                "p25": quantile([row[i] for row in x_all], 0.25),
+                "median": quantile([row[i] for row in x_all], 0.5),
+                "p75": quantile([row[i] for row in x_all], 0.75),
+                "max": max(row[i] for row in x_all),
+                "mean": mean([row[i] for row in x_all]),
+            }
+            for i in range(len(feature_names))
+        },
     }
 
     return performance, predictions, features
@@ -458,8 +665,31 @@ def write_json(path: Path, payload: object) -> None:
 
 
 def main() -> None:
-    ensure_output_dir()
-    records = load_weekly_records()
+    args = parse_args()
+    output_dir = args.output_dir
+    ensure_output_dir(output_dir)
+
+    if args.events_csv is not None:
+        source_kind = "curated_events_csv"
+        source_path = args.events_csv
+        records = load_weekly_records_from_events_csv(args.events_csv)
+        label_map = {
+            "weekly_gross_regression": "Derived: ticket_price_mid * attendance_proxy",
+            "average_ticket_regression": "ticket_price_mid",
+            "sellout_flag_classifier": "Derived: sellout_proxy >= 1.0",
+        }
+        source_sheet = "events_comps"
+    else:
+        source_kind = "raw_workbook"
+        source_path = args.source_xlsx
+        records = load_weekly_records_from_source_xlsx(args.source_xlsx)
+        label_map = {
+            "weekly_gross_regression": "This Week's Gross",
+            "average_ticket_regression": "Average Ticket",
+            "sellout_flag_classifier": "Derived: this_week_pct >= 1.0",
+        }
+        source_sheet = SOURCE_SHEET
+
     train_indices, test_indices = deterministic_split(
         len(records), TRAIN_FRACTION, SEED
     )
@@ -571,13 +801,10 @@ def main() -> None:
             "holdout_rows": len(test_indices),
         },
         "source": {
-            "source_file": "Final presentation/Data Collection & Visualization.xlsx",
-            "source_sheet": "Broadway Revenue",
-            "labels": {
-                "weekly_gross_regression": "This Week's Gross",
-                "average_ticket_regression": "Average Ticket",
-                "sellout_flag_classifier": "Derived: this_week_pct >= 1.0",
-            },
+            "source_file": str(source_path),
+            "source_sheet": source_sheet,
+            "source_kind": source_kind,
+            "labels": label_map,
         },
         "thresholds": {"r2_min": R2_THRESHOLD, "accuracy_min": ACCURACY_THRESHOLD},
         "models": performance_rows,
@@ -598,11 +825,14 @@ def main() -> None:
         "models": feature_rows,
     }
 
-    write_json(ASSETS_DATA / "model_performance.json", performance_payload)
-    write_json(ASSETS_DATA / "model_predictions.json", predictions_payload)
-    write_json(ASSETS_DATA / "model_features.json", features_payload)
+    write_json(output_dir / "model_performance.json", performance_payload)
+    write_json(output_dir / "model_predictions.json", predictions_payload)
+    write_json(output_dir / "model_features.json", features_payload)
 
     print("Model suite training complete.")
+    print(f"- source kind: {source_kind}")
+    print(f"- source path: {source_path}")
+    print(f"- output dir: {output_dir}")
     for row in performance_rows:
         metric_name = row["threshold"]["metric"]
         metric_value = row["metrics"][metric_name]

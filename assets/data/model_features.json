@@ -1,9 +1,10 @@
 {
-  "generated_at_utc": "2026-03-14T19:34:33+00:00",
+  "generated_at_utc": "2026-03-14T21:47:46+00:00",
   "seed": 20260314,
   "source": {
-    "source_file": "Final presentation/Data Collection & Visualization.xlsx",
+    "source_file": "/Users/xiwang/Desktop/StageSignal/Final presentation/Data Collection & Visualization.xlsx",
     "source_sheet": "Broadway Revenue",
+    "source_kind": "raw_workbook",
     "labels": {
       "weekly_gross_regression": "This Week's Gross",
       "average_ticket_regression": "Average Ticket",
@@ -58,6 +59,40 @@
           "last_week_pct": 0.12790254190461434,
           "trend_weeks": 1163.8251528750927
         }
+      },
+      "feature_distribution": {
+        "last_week_gross": {
+          "min": 0.0,
+          "p25": 1897663.0,
+          "median": 2214118.0,
+          "p75": 2969573.0,
+          "max": 4042906.0,
+          "mean": 2381919.668112798
+        },
+        "top_ticket": {
+          "min": 275.0,
+          "p25": 449.0,
+          "median": 475.0,
+          "p75": 849.0,
+          "max": 1500.0,
+          "mean": 606.5357917570499
+        },
+        "last_week_pct": {
+          "min": 0.0,
+          "p25": 1.003,
+          "median": 1.014,
+          "p75": 1.018,
+          "max": 1.018,
+          "mean": 0.9877527114967461
+        },
+        "trend_weeks": {
+          "min": 0.0,
+          "p25": 805.0,
+          "median": 1610.0,
+          "p75": 2975.0,
+          "max": 3780.0,
+          "mean": 1874.6030368763556
+        }
       }
     },
     {
@@ -106,6 +141,40 @@
           "last_week_gross": 634008.6995949858,
           "last_week_pct": 0.12790254190461434,
           "trend_weeks": 1163.8251528750927
+        }
+      },
+      "feature_distribution": {
+        "top_ticket": {
+          "min": 275.0,
+          "p25": 449.0,
+          "median": 475.0,
+          "p75": 849.0,
+          "max": 1500.0,
+          "mean": 606.5357917570499
+        },
+        "last_week_gross": {
+          "min": 0.0,
+          "p25": 1897663.0,
+          "median": 2214118.0,
+          "p75": 2969573.0,
+          "max": 4042906.0,
+          "mean": 2381919.668112798
+        },
+        "last_week_pct": {
+          "min": 0.0,
+          "p25": 1.003,
+          "median": 1.014,
+          "p75": 1.018,
+          "max": 1.018,
+          "mean": 0.9877527114967461
+        },
+        "trend_weeks": {
+          "min": 0.0,
+          "p25": 805.0,
+          "median": 1610.0,
+          "p75": 2975.0,
+          "max": 3780.0,
+          "mean": 1874.6030368763556
         }
       }
     },
@@ -171,6 +240,56 @@
           "total_seats": 450.1490579555277,
           "last_week_pct": 0.12790254190461434,
           "trend_weeks": 1163.8251528750927
+        }
+      },
+      "feature_distribution": {
+        "last_week_gross": {
+          "min": 0.0,
+          "p25": 1897663.0,
+          "median": 2214118.0,
+          "p75": 2969573.0,
+          "max": 4042906.0,
+          "mean": 2381919.668112798
+        },
+        "average_ticket": {
+          "min": 117.99,
+          "p25": 180.69,
+          "median": 210.88,
+          "p75": 278.07,
+          "max": 376.01,
+          "mean": 226.95195227765728
+        },
+        "top_ticket": {
+          "min": 275.0,
+          "p25": 449.0,
+          "median": 475.0,
+          "p75": 849.0,
+          "max": 1500.0,
+          "mean": 606.5357917570499
+        },
+        "total_seats": {
+          "min": 2648.0,
+          "p25": 10568.0,
+          "median": 10592.0,
+          "p75": 10592.0,
+          "max": 84736.0,
+          "mean": 10707.084598698482
+        },
+        "last_week_pct": {
+          "min": 0.0,
+          "p25": 1.003,
+          "median": 1.014,
+          "p75": 1.018,
+          "max": 1.018,
+          "mean": 0.9877527114967461
+        },
+        "trend_weeks": {
+          "min": 0.0,
+          "p25": 805.0,
+          "median": 1610.0,
+          "p75": 2975.0,
+          "max": 3780.0,
+          "mean": 1874.6030368763556
         }
       }
     }

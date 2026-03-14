@@ -48,6 +48,12 @@ This command also runs model training and refreshes:
 - `assets/data/model_predictions.json`
 - `assets/data/model_features.json`
 
+To reproduce model training directly from curated downloadable CSV data:
+
+```bash
+python3 scripts/train_model_suite.py --events-csv assets/data/events_comps.csv --output-dir ./repro_output
+```
+
 2) Serve static site:
 
 ```bash

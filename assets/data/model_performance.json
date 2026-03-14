@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-03-14T19:34:33+00:00",
+  "generated_at_utc": "2026-03-14T21:47:46+00:00",
   "seed": 20260314,
   "split": {
     "train_fraction": 0.8,
@@ -8,8 +8,9 @@
     "holdout_rows": 93
   },
   "source": {
-    "source_file": "Final presentation/Data Collection & Visualization.xlsx",
+    "source_file": "/Users/xiwang/Desktop/StageSignal/Final presentation/Data Collection & Visualization.xlsx",
     "source_sheet": "Broadway Revenue",
+    "source_kind": "raw_workbook",
     "labels": {
       "weekly_gross_regression": "This Week's Gross",
       "average_ticket_regression": "Average Ticket",

@@ -10,6 +10,16 @@
     heatHigh: "#8db2a5"
   });
 
+  const DENSITY_COLORS = Object.freeze([
+    "#4f7f6e",
+    "#b16a2c",
+    "#6c79a4",
+    "#8f6651",
+    "#5d6d86",
+    "#7a8c57",
+    "#8f5a72"
+  ]);
+
   function renderThemePrevalence(containerId, themes) {
     const container = getElement(containerId);
     if (!container) {
@@ -302,6 +312,147 @@
     );
   }
 
+  function renderFeatureDensity(containerId, featureRows, options = {}) {
+    const container = getElement(containerId);
+    if (!container) {
+      return;
+    }
+
+    const records = Array.isArray(featureRows)
+      ? featureRows.filter((row) =>
+          row &&
+          Number.isFinite(Number(row.min)) &&
+          Number.isFinite(Number(row.p25)) &&
+          Number.isFinite(Number(row.median)) &&
+          Number.isFinite(Number(row.p75)) &&
+          Number.isFinite(Number(row.max))
+        )
+      : [];
+
+    if (!records.length) {
+      container.classList.add("is-empty");
+      container.innerHTML = "Feature density unavailable.";
+      return;
+    }
+
+    container.classList.remove("is-empty");
+
+    if (isPlotlyAvailable()) {
+      const compact = Boolean(options.compact);
+      const traces = records.map((row, index) => {
+        const featureLabel = typeof row.label === "string" && row.label.trim().length
+          ? row.label
+          : `Feature ${index + 1}`;
+        const stats = normalizeStats(row);
+        const samples = buildQuantileSamples(stats, 180);
+        const range = stats.max - stats.min;
+        const normalizedSamples = samples.map((value) => {
+          if (!Number.isFinite(range) || range <= 0) {
+            return 50;
+          }
+          return ((value - stats.min) / range) * 100;
+        });
+
+        const color = pickDensityColor(index);
+        const hovertemplate = "%{customdata}<extra></extra>";
+
+        return {
+          type: "violin",
+          orientation: "h",
+          name: featureLabel,
+          x: normalizedSamples,
+          y: new Array(normalizedSamples.length).fill(featureLabel),
+          points: "all",
+          hoveron: "points",
+          pointpos: 0,
+          jitter: 0,
+          spanmode: "hard",
+          line: { color, width: 1.4 },
+          fillcolor: colorWithAlpha(color, 0.34),
+          meanline: { visible: compact, color },
+          box: { visible: false },
+          marker: {
+            color,
+            opacity: 0,
+            size: 8
+          },
+          customdata: samples.map((value) => formatDensityValue(value, row.valueType)),
+          hovertemplate
+        };
+      });
+
+      const subtitle = typeof options.subtitle === "string" ? options.subtitle.trim() : "";
+      const height = compact
+        ? Math.max(180, Math.min(300, records.length * 26 + 92))
+        : Math.max(280, Math.min(980, records.length * 38 + 160));
+      const layout = {
+        margin: { t: subtitle ? 40 : 16, r: 24, b: 44, l: compact ? 132 : 190 },
+        paper_bgcolor: "transparent",
+        plot_bgcolor: "transparent",
+        height,
+        font: { color: PALETTE.text, family: "Instrument Sans, sans-serif" },
+        showlegend: false,
+        hovermode: "closest",
+        xaxis: {
+          title: "Within-feature range (%)",
+          range: [0, 100],
+          tickvals: [0, 25, 50, 75, 100],
+          ticksuffix: "%",
+          gridcolor: PALETTE.grid,
+          zeroline: false
+        },
+        yaxis: {
+          automargin: true,
+          categoryorder: "array",
+          categoryarray: traces.map((trace) => trace.name).reverse()
+        },
+        violingap: 0.28,
+        violinmode: "overlay"
+      };
+
+      if (subtitle) {
+        layout.annotations = [
+          {
+            x: 0,
+            y: 1.12,
+            xref: "paper",
+            yref: "paper",
+            showarrow: false,
+            text: subtitle,
+            font: { size: 12, color: "#6b6257" },
+            xanchor: "left"
+          }
+        ];
+      }
+
+      window.Plotly.newPlot(container, traces, layout, { displayModeBar: false, responsive: true });
+      return;
+    }
+
+    if (Boolean(options.compact)) {
+      renderTable(
+        container,
+        ["Feature", "Median", "P25-P75", "Min-Max"],
+        records.map((row) => {
+          const stats = normalizeStats(row);
+          return [
+            row.label || row.feature || "Feature",
+            formatDensityValue(stats.median, row.valueType),
+            `${formatDensityValue(stats.p25, row.valueType)} - ${formatDensityValue(stats.p75, row.valueType)}`,
+            `${formatDensityValue(stats.min, row.valueType)} - ${formatDensityValue(stats.max, row.valueType)}`
+          ];
+        })
+      );
+      return;
+    }
+
+    renderTable(
+      container,
+      ["Feature", "Model"],
+      records.map((row) => [row.label || row.feature || "Feature", row.model || "--"])
+    );
+  }
+
   function renderPredictionVsActual(containerId, rows, options = {}) {
     const container = getElement(containerId);
     if (!container) {
@@ -482,6 +633,91 @@
       `</div>`;
   }
 
+  function normalizeStats(row) {
+    const values = [Number(row.min), Number(row.p25), Number(row.median), Number(row.p75), Number(row.max)].sort(
+      (a, b) => a - b
+    );
+    return {
+      min: values[0],
+      p25: values[1],
+      median: values[2],
+      p75: values[3],
+      max: values[4]
+    };
+  }
+
+  function buildQuantileSamples(stats, sampleCount) {
+    const count = Number.isFinite(Number(sampleCount)) ? Math.max(40, Math.floor(Number(sampleCount))) : 120;
+    const samples = [];
+
+    for (let index = 0; index < count; index += 1) {
+      const u = count === 1 ? 0.5 : index / (count - 1);
+      samples.push(interpolateQuantile(stats, u));
+    }
+
+    return samples;
+  }
+
+  function interpolateQuantile(stats, u) {
+    const t = clamp(u, 0, 1);
+    if (t <= 0.25) {
+      return lerp(stats.min, stats.p25, t / 0.25);
+    }
+    if (t <= 0.5) {
+      return lerp(stats.p25, stats.median, (t - 0.25) / 0.25);
+    }
+    if (t <= 0.75) {
+      return lerp(stats.median, stats.p75, (t - 0.5) / 0.25);
+    }
+    return lerp(stats.p75, stats.max, (t - 0.75) / 0.25);
+  }
+
+  function lerp(start, end, t) {
+    return start + (end - start) * t;
+  }
+
+  function pickDensityColor(index) {
+    return DENSITY_COLORS[index % DENSITY_COLORS.length];
+  }
+
+  function colorWithAlpha(hexColor, alpha) {
+    const hex = String(hexColor || "").replace("#", "").trim();
+    if (!/^[0-9a-fA-F]{6}$/.test(hex)) {
+      return `rgba(79, 127, 110, ${alpha})`;
+    }
+    const r = parseInt(hex.slice(0, 2), 16);
+    const g = parseInt(hex.slice(2, 4), 16);
+    const b = parseInt(hex.slice(4, 6), 16);
+    return `rgba(${r}, ${g}, ${b}, ${clamp(alpha, 0, 1)})`;
+  }
+
+  function formatDensityValue(value, valueType) {
+    const numeric = Number(value);
+    if (!Number.isFinite(numeric)) {
+      return "--";
+    }
+
+    if (valueType === "currency") {
+      return `$${numeric.toLocaleString("en-US", { maximumFractionDigits: 0 })}`;
+    }
+
+    if (valueType === "percent_ratio") {
+      return `${(numeric * 100).toFixed(1)}%`;
+    }
+
+    if (valueType === "integer") {
+      return numeric.toLocaleString("en-US", { maximumFractionDigits: 0 });
+    }
+
+    if (Math.abs(numeric) >= 100) {
+      return numeric.toFixed(1);
+    }
+    if (Math.abs(numeric) >= 1) {
+      return numeric.toFixed(2);
+    }
+    return numeric.toFixed(3);
+  }
+
   function getElement(id) {
     if (typeof id !== "string") {
       return null;
@@ -510,6 +746,10 @@
       return Number(value).toLocaleString("en-US", { maximumFractionDigits: 2 });
     }
     return Number(value).toFixed(4);
+  }
+
+  function clamp(value, min, max) {
+    return Math.min(max, Math.max(min, value));
   }
 
   function normalizeConfusionMatrix(confusion) {
@@ -560,6 +800,7 @@
     renderDemandScenarios,
     renderPurchaseProbability,
     renderRevenuePrice,
+    renderFeatureDensity,
     renderPredictionVsActual,
     renderSelloutConfusionChart,
     resetChart,

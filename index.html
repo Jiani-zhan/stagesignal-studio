@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="StageSignal Studio is a personal audience intelligence and pricing app for live arts launch analysis."
+      content="StageSignal Studio is a personal analytics app studying Hamilton Immersive, from audience signals to demand and pricing decisions."
     />
     <title>StageSignal Studio | Personal App</title>
 
@@ -46,14 +46,15 @@
           <p class="eyebrow">Personal Marketing Science App</p>
           <h1>From artistic intuition to marketing science.</h1>
           <p class="quick-intro">
-            StageSignal Studio converts event benchmarks, audience text, and survey responses
-            into segmentation insights, demand projections, pricing recommendations, and a
-            decision-ready memo for launch planning.
+            This project studies <strong>Hamilton Immersive</strong>: a proposal to adapt the
+            Broadway musical <em>Hamilton</em> into an interactive, walk-through production led by
+            Punchdrunk. StageSignal Studio converts benchmark, audience, and survey data into
+            segmentation insights, demand projections, pricing recommendations, and a
+            decision-ready launch memo.
           </p>
           <p class="lead">
-            StageSignal Studio is my personal analytics product for live arts launch planning.
-            It unifies source auditing, audience segmentation, demand estimation, pricing
-            scenarios, and decision-ready recommendation notes.
+            The analysis treats Hamilton as a top-tier IP with strong historical performance,
+            broad digital influence, and a clear fit for immersive theatre experimentation.
           </p>
 
           <div class="hero-meta">
@@ -66,6 +67,20 @@
               <h3 id="hero-model-count">--</h3>
             </article>
           </div>
+
+          <article id="project-context" class="panel research-context">
+            <div class="panel-head">
+              <h3>Research Background: Hamilton Immersive</h3>
+              <p>Project context and market assumptions</p>
+            </div>
+            <ul class="bullet-list">
+              <li>Study object: adapting Broadway&apos;s <em>Hamilton</em> into an immersive theatre format.</li>
+              <li>Production context: proposed as a new venture direction for Punchdrunk.</li>
+              <li>Historical signal: about $1.109B cumulative Broadway gross (Jul 2015-Oct 2025).</li>
+              <li>Demand signal: average sold-seat rate around 99.69% over the same period.</li>
+              <li>Research goal: test audience fit, demand risk, pricing strategy, and launch viability.</li>
+            </ul>
+          </article>
         </div>
       </section>
 
@@ -95,7 +110,7 @@
               <h3 id="overview-ga-price">--</h3>
             </article>
             <article class="stat">
-              <p class="stat-label">Model Gate</p>
+              <p class="stat-label">Model Snapshot</p>
               <h3 id="overview-model-gate">--</h3>
             </article>
           </div>
@@ -152,6 +167,7 @@
               </table>
             </div>
           </article>
+
         </div>
       </section>
 
@@ -304,36 +320,108 @@
 
           <article class="panel span-2 gate">
             <h3 id="model-overall-gate">Awaiting evaluation.</h3>
+            <p class="model-intro-note">
+              Metrics below are computed on holdout weeks the models did not see during training.
+            </p>
           </article>
 
-          <article class="model-item">
-            <div class="model-head">
-              <h3>weekly_gross_regression</h3>
-              <span class="model-badge is-fail" id="model-gross-gate">N/A</span>
+          <article class="panel span-2">
+            <div class="panel-head">
+              <h3>Reproduce Model Results</h3>
+              <p>Train from downloaded curated CSV data.</p>
             </div>
-            <p class="model-label">R-squared</p>
-            <p class="model-value" id="model-gross-r2">--</p>
-            <div id="model-feature-gross" class="chip-row"></div>
+            <p>
+              Code downloads:
+              <a class="download-link" href="scripts/train_model_suite.py" download>train_model_suite.py</a>
+              <span class="download-sep">|</span>
+              <a class="download-link" href="scripts/build_demo_data.py" download>build_demo_data.py</a>
+            </p>
+            <pre class="code-snippet">python3 train_model_suite.py --events-csv events_comps.csv --output-dir ./repro_output</pre>
+            <p>
+              Download <code>events_comps.csv</code> from Data Foundation and place it in the
+              same folder as the training script before running the command.
+            </p>
           </article>
 
-          <article class="model-item">
-            <div class="model-head">
-              <h3>average_ticket_regression</h3>
-              <span class="model-badge is-fail" id="model-seats-gate">N/A</span>
-            </div>
-            <p class="model-label">R-squared</p>
-            <p class="model-value" id="model-seats-r2">--</p>
-            <div id="model-feature-seats" class="chip-row"></div>
-          </article>
+          <div class="model-flip-grid span-2">
+            <article class="model-flip-card" id="model-card-gross">
+              <div class="model-flip-inner">
+                <div class="model-face model-front">
+                  <p class="model-label">Weekly Gross Model</p>
+                  <h3>Revenue projection</h3>
+                  <p class="model-value" id="model-gross-r2">--</p>
+                  <p class="model-plain" id="model-gross-plain">Awaiting model summary.</p>
+                  <button class="flip-toggle" type="button" data-target="model-card-gross">View feature details</button>
+                </div>
+                <div class="model-face model-back">
+                  <h3>Feature details</h3>
+                  <ul id="model-feature-gross-meanings" class="bullet-list">
+                    <li>Awaiting feature meanings.</li>
+                  </ul>
+                  <ul id="model-feature-gross-stats" class="bullet-list feature-stat-list">
+                    <li>Awaiting feature stats.</li>
+                  </ul>
+                  <button class="flip-toggle" type="button" data-target="model-card-gross">Back</button>
+                </div>
+              </div>
+            </article>
 
-          <article class="model-item">
-            <div class="model-head">
-              <h3>sellout_flag_classifier</h3>
-              <span class="model-badge is-fail" id="model-sellout-gate">N/A</span>
+            <article class="model-flip-card" id="model-card-seats">
+              <div class="model-flip-inner">
+                <div class="model-face model-front">
+                  <p class="model-label">Average Ticket Model</p>
+                  <h3>Price level projection</h3>
+                  <p class="model-value" id="model-seats-r2">--</p>
+                  <p class="model-plain" id="model-seats-plain">Awaiting model summary.</p>
+                  <button class="flip-toggle" type="button" data-target="model-card-seats">View feature details</button>
+                </div>
+                <div class="model-face model-back">
+                  <h3>Feature details</h3>
+                  <ul id="model-feature-seats-meanings" class="bullet-list">
+                    <li>Awaiting feature meanings.</li>
+                  </ul>
+                  <ul id="model-feature-seats-stats" class="bullet-list feature-stat-list">
+                    <li>Awaiting feature stats.</li>
+                  </ul>
+                  <button class="flip-toggle" type="button" data-target="model-card-seats">Back</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="model-flip-card" id="model-card-sellout">
+              <div class="model-flip-inner">
+                <div class="model-face model-front">
+                  <p class="model-label">Sellout Classification Model</p>
+                  <h3>Sellout risk prediction</h3>
+                  <p class="model-value" id="model-sellout-accuracy">--</p>
+                  <p class="model-plain" id="model-sellout-plain">Awaiting model summary.</p>
+                  <button class="flip-toggle" type="button" data-target="model-card-sellout">View feature details</button>
+                </div>
+                <div class="model-face model-back">
+                  <h3>Feature details</h3>
+                  <ul id="model-feature-sellout-meanings" class="bullet-list">
+                    <li>Awaiting feature meanings.</li>
+                  </ul>
+                  <ul id="model-feature-sellout-stats" class="bullet-list feature-stat-list">
+                    <li>Awaiting feature stats.</li>
+                  </ul>
+                  <button class="flip-toggle" type="button" data-target="model-card-sellout">Back</button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <article class="panel span-2">
+            <div class="panel-head">
+              <h3>Feature Density Atlas</h3>
+              <p>Density profile of every model input, normalized within each feature range.</p>
             </div>
-            <p class="model-label">Accuracy</p>
-            <p class="model-value" id="model-sellout-accuracy">--</p>
-            <div id="model-feature-sellout" class="chip-row"></div>
+            <div
+              id="feature-distribution-matrix-chart"
+              class="chart-frame feature-density-atlas is-empty"
+              role="img"
+              aria-label="Feature density atlas across all models"
+            ></div>
           </article>
 
           <article class="panel">
