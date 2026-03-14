@@ -1,0 +1,75 @@
+[
+  {
+    "channel": "instagram_reels",
+    "audience_size_proxy": 2304311130,
+    "historical_ctr": 0.042,
+    "estimated_conversion": 0.028,
+    "cpm_or_cost_proxy": 16.5,
+    "source_file": "Final presentation/Data Collection & Visualization.xlsx",
+    "source_sheet": "Streaming Data",
+    "is_synthetic": false
+  },
+  {
+    "channel": "tiktok_short_video",
+    "audience_size_proxy": 5505877,
+    "historical_ctr": 0.051,
+    "estimated_conversion": 0.023,
+    "cpm_or_cost_proxy": 14.0,
+    "source_file": "Final presentation/Data Collection & Visualization.xlsx",
+    "source_sheet": "Streaming Data",
+    "is_synthetic": false
+  },
+  {
+    "channel": "youtube_trailer",
+    "audience_size_proxy": 1093130000,
+    "historical_ctr": 0.031,
+    "estimated_conversion": 0.019,
+    "cpm_or_cost_proxy": 19.0,
+    "source_file": "Final presentation/C2.xlsx",
+    "source_sheet": "Sheet1",
+    "is_synthetic": false
+  },
+  {
+    "channel": "spotify_audio_teaser",
+    "audience_size_proxy": 32520000,
+    "historical_ctr": 0.022,
+    "estimated_conversion": 0.016,
+    "cpm_or_cost_proxy": 12.5,
+    "source_file": "Final presentation/Data Collection & Visualization.xlsx",
+    "source_sheet": "Streaming Data",
+    "is_synthetic": false
+  },
+  {
+    "channel": "email_newsletter",
+    "audience_size_proxy": 18500,
+    "historical_ctr": 0.084,
+    "estimated_conversion": 0.051,
+    "cpm_or_cost_proxy": 6.2,
+    "source_file": "Final presentation/B3/Audience.pdf",
+    "source_sheet": "Media chapter",
+    "is_synthetic": true,
+    "assumption_note": "Proxy added because first-party CRM data was not included in source files."
+  },
+  {
+    "channel": "search_ads",
+    "audience_size_proxy": 62000,
+    "historical_ctr": 0.037,
+    "estimated_conversion": 0.024,
+    "cpm_or_cost_proxy": 21.0,
+    "source_file": "Final presentation/B3/Audience.pdf",
+    "source_sheet": "Media chapter",
+    "is_synthetic": true,
+    "assumption_note": "Search demand volume was synthesized from media-discovery percentages."
+  },
+  {
+    "channel": "creator_partnerships",
+    "audience_size_proxy": 34000,
+    "historical_ctr": 0.047,
+    "estimated_conversion": 0.03,
+    "cpm_or_cost_proxy": 18.7,
+    "source_file": "Final presentation/C2.xlsx",
+    "source_sheet": "Sheet1",
+    "is_synthetic": true,
+    "assumption_note": "Partnership bundle estimated from cast and video reach artifacts."
+  }
+]

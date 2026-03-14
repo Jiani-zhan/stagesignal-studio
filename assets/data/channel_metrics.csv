@@ -1,0 +1,8 @@
+channel,audience_size_proxy,historical_ctr,estimated_conversion,cpm_or_cost_proxy,source_file,source_sheet,is_synthetic,assumption_note
+instagram_reels,2304311130,0.042,0.028,16.5,Final presentation/Data Collection & Visualization.xlsx,Streaming Data,False,
+tiktok_short_video,5505877,0.051,0.023,14.0,Final presentation/Data Collection & Visualization.xlsx,Streaming Data,False,
+youtube_trailer,1093130000,0.031,0.019,19.0,Final presentation/C2.xlsx,Sheet1,False,
+spotify_audio_teaser,32520000,0.022,0.016,12.5,Final presentation/Data Collection & Visualization.xlsx,Streaming Data,False,
+email_newsletter,18500,0.084,0.051,6.2,Final presentation/B3/Audience.pdf,Media chapter,True,Proxy added because first-party CRM data was not included in source files.
+search_ads,62000,0.037,0.024,21.0,Final presentation/B3/Audience.pdf,Media chapter,True,Search demand volume was synthesized from media-discovery percentages.
+creator_partnerships,34000,0.047,0.03,18.7,Final presentation/C2.xlsx,Sheet1,True,Partnership bundle estimated from cast and video reach artifacts.

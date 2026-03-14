@@ -1,0 +1,18 @@
+{
+  "acceptable_range_low": 49.99,
+  "acceptable_range_high": 100.38,
+  "optimal_price_point": 90.97,
+  "indifference_price_point": 74.92,
+  "recommended_ga_price": 74.92,
+  "recommended_premium_price": 118.37,
+  "recommended_student_price": 50.2,
+  "rationale": [
+    "GA is anchored near the empirical indifference price while staying inside the acceptable range.",
+    "Premium tier captures high-WTP Broadway/experience demand without pushing median respondents into rejection.",
+    "Student guardrail maintains accessibility objective alongside revenue target."
+  ],
+  "source_file": "assets/data/survey_responses.json",
+  "source_sheet": "survey_responses",
+  "is_synthetic": true,
+  "assumption_note": "Van Westendorp points are estimated from synthetic micro-survey responses generated from source report distributions."
+}

@@ -1,0 +1,18 @@
+{
+  "event_name": "Beethoven After Dark",
+  "event_type": "immersive classical",
+  "city": "New York",
+  "venue_name": "Chelsea Warehouse Hall",
+  "venue_capacity": 280,
+  "launch_date": "2026-02-14",
+  "candidate_price_low": 45,
+  "candidate_price_mid": 75,
+  "candidate_price_high": 120,
+  "budget_band": "mid",
+  "target_goal": "maximize_revenue",
+  "concept_description": "Late-night immersive Beethoven performance with narrative staging, actor-guided transitions, and premium social add-ons.",
+  "source_file": "Final presentation/B1.xlsx",
+  "source_sheet": "Sheet1",
+  "is_synthetic": true,
+  "assumption_note": "Hero event brief synthesized from benchmark and cost workbooks for the NYC demo case."
+}

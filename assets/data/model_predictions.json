@@ -1,0 +1,2265 @@
+{
+  "generated_at_utc": "2026-03-14T19:34:33+00:00",
+  "seed": 20260314,
+  "source": {
+    "source_file": "Final presentation/Data Collection & Visualization.xlsx",
+    "source_sheet": "Broadway Revenue",
+    "labels": {
+      "weekly_gross_regression": "This Week's Gross",
+      "average_ticket_regression": "Average Ticket",
+      "sellout_flag_classifier": "Derived: this_week_pct >= 1.0"
+    }
+  },
+  "models": [
+    {
+      "model_id": "weekly_gross_regression",
+      "target": "this_week_gross",
+      "rows": [
+        {
+          "row_id": 107,
+          "week_serial": 42939.0,
+          "week_date": "2017-07-23",
+          "actual": 3033266.0,
+          "predicted": 2973331.3922582027,
+          "error": -59934.60774179734
+        },
+        {
+          "row_id": 29,
+          "week_serial": 42393.0,
+          "week_date": "2016-01-24",
+          "actual": 1304793.0,
+          "predicted": 1956212.6874304868,
+          "error": 651419.6874304868
+        },
+        {
+          "row_id": 394,
+          "week_serial": 45508.0,
+          "week_date": "2024-08-04",
+          "actual": 1954746.0,
+          "predicted": 1974029.8040095677,
+          "error": 19283.804009567713
+        },
+        {
+          "row_id": 344,
+          "week_serial": 45158.0,
+          "week_date": "2023-08-20",
+          "actual": 1904853.0,
+          "predicted": 1996842.1192345894,
+          "error": 91989.1192345894
+        },
+        {
+          "row_id": 40,
+          "week_serial": 42470.0,
+          "week_date": "2016-04-10",
+          "actual": 1813655.0,
+          "predicted": 1977841.612592815,
+          "error": 164186.61259281496
+        },
+        {
+          "row_id": 265,
+          "week_serial": 44605.0,
+          "week_date": "2022-02-13",
+          "actual": 1826363.0,
+          "predicted": 1974907.14800624,
+          "error": 148544.1480062399
+        },
+        {
+          "row_id": 149,
+          "week_serial": 43233.0,
+          "week_date": "2018-05-13",
+          "actual": 2816606.0,
+          "predicted": 3007316.2914549573,
+          "error": 190710.29145495733
+        },
+        {
+          "row_id": 428,
+          "week_serial": 45746.0,
+          "week_date": "2025-03-30",
+          "actual": 2123279.0,
+          "predicted": 1925152.6215104396,
+          "error": -198126.37848956045
+        },
+        {
+          "row_id": 352,
+          "week_serial": 45214.0,
+          "week_date": "2023-10-15",
+          "actual": 1931917.0,
+          "predicted": 1989853.4538893364,
+          "error": 57936.45388933644
+        },
+        {
+          "row_id": 319,
+          "week_serial": 44983.0,
+          "week_date": "2023-02-26",
+          "actual": 1944489.0,
+          "predicted": 2033891.3737747532,
+          "error": 89402.37377475318
+        },
+        {
+          "row_id": 166,
+          "week_serial": 43352.0,
+          "week_date": "2018-09-09",
+          "actual": 3209201.0,
+          "predicted": 3066313.79323426,
+          "error": -142887.20676574018
+        },
+        {
+          "row_id": 36,
+          "week_serial": 42442.0,
+          "week_date": "2016-03-13",
+          "actual": 1758555.0,
+          "predicted": 1955608.7862969667,
+          "error": 197053.78629696672
+        },
+        {
+          "row_id": 306,
+          "week_serial": 44892.0,
+          "week_date": "2022-11-27",
+          "actual": 2613656.0,
+          "predicted": 2017228.044847426,
+          "error": -596427.955152574
+        },
+        {
+          "row_id": 20,
+          "week_serial": 42330.0,
+          "week_date": "2015-11-22",
+          "actual": 1450763.0,
+          "predicted": 1888643.5347117097,
+          "error": 437880.5347117097
+        },
+        {
+          "row_id": 105,
+          "week_serial": 42925.0,
+          "week_date": "2017-07-09",
+          "actual": 3061008.0,
+          "predicted": 2986471.982454104,
+          "error": -74536.01754589612
+        },
+        {
+          "row_id": 85,
+          "week_serial": 42785.0,
+          "week_date": "2017-02-19",
+          "actual": 2866806.0,
+          "predicted": 2927270.0836650496,
+          "error": 60464.083665049635
+        },
+        {
+          "row_id": 383,
+          "week_serial": 45431.0,
+          "week_date": "2024-05-19",
+          "actual": 1858132.0,
+          "predicted": 1859206.6632640848,
+          "error": 1074.6632640848402
+        },
+        {
+          "row_id": 201,
+          "week_serial": 43597.0,
+          "week_date": "2019-05-12",
+          "actual": 3139022.0,
+          "predicted": 3044044.569633871,
+          "error": -94977.43036612915
+        },
+        {
+          "row_id": 312,
+          "week_serial": 44934.0,
+          "week_date": "2023-01-08",
+          "actual": 2120811.0,
+          "predicted": 2318474.178830964,
+          "error": 197663.17883096403
+        },
+        {
+          "row_id": 196,
+          "week_serial": 43562.0,
+          "week_date": "2019-04-07",
+          "actual": 2940209.0,
+          "predicted": 3063009.75702919,
+          "error": 122800.7570291902
+        },
+        {
+          "row_id": 58,
+          "week_serial": 42596.0,
+          "week_date": "2016-08-14",
+          "actual": 2045095.0,
+          "predicted": 2072398.6304028262,
+          "error": 27303.63040282624
+        },
+        {
+          "row_id": 331,
+          "week_serial": 45067.0,
+          "week_date": "2023-05-21",
+          "actual": 1906604.0,
+          "predicted": 1996397.3693442126,
+          "error": 89793.36934421258
+        },
+        {
+          "row_id": 291,
+          "week_serial": 44787.0,
+          "week_date": "2022-08-14",
+          "actual": 2194094.0,
+          "predicted": 2115145.3725498435,
+          "error": -78948.62745015649
+        },
+        {
+          "row_id": 363,
+          "week_serial": 45291.0,
+          "week_date": "2023-12-31",
+          "actual": 2404967.0,
+          "predicted": 2297388.9476947747,
+          "error": -107578.05230522528
+        },
+        {
+          "row_id": 159,
+          "week_serial": 43303.0,
+          "week_date": "2018-07-22",
+          "actual": 3143813.0,
+          "predicted": 3011208.2823351463,
+          "error": -132604.71766485367
+        },
+        {
+          "row_id": 63,
+          "week_serial": 42631.0,
+          "week_date": "2016-09-18",
+          "actual": 2159038.0,
+          "predicted": 2106793.4979887516,
+          "error": -52244.502011248376
+        },
+        {
+          "row_id": 194,
+          "week_serial": 43548.0,
+          "week_date": "2019-03-24",
+          "actual": 2949405.0,
+          "predicted": 3046824.4101836495,
+          "error": 97419.41018364951
+        },
+        {
+          "row_id": 218,
+          "week_serial": 43716.0,
+          "week_date": "2019-09-08",
+          "actual": 2911182.0,
+          "predicted": 2976906.122846465,
+          "error": 65724.12284646509
+        },
+        {
+          "row_id": 186,
+          "week_serial": 43492.0,
+          "week_date": "2019-01-27",
+          "actual": 3147991.0,
+          "predicted": 3054489.7197054415,
+          "error": -93501.2802945585
+        },
+        {
+          "row_id": 83,
+          "week_serial": 42771.0,
+          "week_date": "2017-02-05",
+          "actual": 3214897.0,
+          "predicted": 2755409.100686304,
+          "error": -459487.8993136962
+        },
+        {
+          "row_id": 5,
+          "week_serial": 42225.0,
+          "week_date": "2015-08-09",
+          "actual": 1255163.0,
+          "predicted": 1568993.599335347,
+          "error": 313830.59933534707
+        },
+        {
+          "row_id": 15,
+          "week_serial": 42295.0,
+          "week_date": "2015-10-18",
+          "actual": 1478877.0,
+          "predicted": 1920841.6368803694,
+          "error": 441964.6368803694
+        },
+        {
+          "row_id": 253,
+          "week_serial": 44514.0,
+          "week_date": "2021-11-14",
+          "actual": 2673170.0,
+          "predicted": 2286859.7096578376,
+          "error": -386310.29034216236
+        },
+        {
+          "row_id": 220,
+          "week_serial": 43730.0,
+          "week_date": "2019-09-22",
+          "actual": 2973580.0,
+          "predicted": 2932087.7403775183,
+          "error": -41492.25962248165
+        },
+        {
+          "row_id": 367,
+          "week_serial": 45319.0,
+          "week_date": "2024-01-28",
+          "actual": 1725790.0,
+          "predicted": 1878316.6153078028,
+          "error": 152526.6153078028
+        },
+        {
+          "row_id": 79,
+          "week_serial": 42743.0,
+          "week_date": "2017-01-08",
+          "actual": 2456491.0,
+          "predicted": 2674438.8816094976,
+          "error": 217947.8816094976
+        },
+        {
+          "row_id": 50,
+          "week_serial": 42540.0,
+          "week_date": "2016-06-19",
+          "actual": 2026838.0,
+          "predicted": 2058440.734917722,
+          "error": 31602.734917721944
+        },
+        {
+          "row_id": 333,
+          "week_serial": 45081.0,
+          "week_date": "2023-06-04",
+          "actual": 1938603.0,
+          "predicted": 1991460.330772196,
+          "error": 52857.33077219594
+        },
+        {
+          "row_id": 407,
+          "week_serial": 45599.0,
+          "week_date": "2024-11-03",
+          "actual": 1717782.0,
+          "predicted": 1739863.8993832255,
+          "error": 22081.89938322548
+        },
+        {
+          "row_id": 21,
+          "week_serial": 42337.0,
+          "week_date": "2015-11-29",
+          "actual": 1833886.0,
+          "predicted": 1831832.6035780325,
+          "error": -2053.39642196754
+        },
+        {
+          "row_id": 399,
+          "week_serial": 45543.0,
+          "week_date": "2024-09-08",
+          "actual": 1645632.0,
+          "predicted": 1921098.7107998743,
+          "error": 275466.7107998743
+        },
+        {
+          "row_id": 47,
+          "week_serial": 42519.0,
+          "week_date": "2016-05-29",
+          "actual": 1917923.0,
+          "predicted": 1955377.314868199,
+          "error": 37454.31486819894
+        },
+        {
+          "row_id": 80,
+          "week_serial": 42750.0,
+          "week_date": "2017-01-15",
+          "actual": 2451260.0,
+          "predicted": 2331103.587037643,
+          "error": -120156.41296235705
+        },
+        {
+          "row_id": 373,
+          "week_serial": 45361.0,
+          "week_date": "2024-03-10",
+          "actual": 1760337.0,
+          "predicted": 1803800.676225586,
+          "error": 43463.676225586096
+        },
+        {
+          "row_id": 190,
+          "week_serial": 43520.0,
+          "week_date": "2019-02-24",
+          "actual": 3150186.0,
+          "predicted": 2949690.804493513,
+          "error": -200495.19550648704
+        },
+        {
+          "row_id": 124,
+          "week_serial": 43058.0,
+          "week_date": "2017-11-19",
+          "actual": 2826330.0,
+          "predicted": 3022338.7053148756,
+          "error": 196008.70531487558
+        },
+        {
+          "row_id": 252,
+          "week_serial": 44507.0,
+          "week_date": "2021-11-07",
+          "actual": 2660546.0,
+          "predicted": 2289899.850552578,
+          "error": -370646.149447422
+        },
+        {
+          "row_id": 350,
+          "week_serial": 45200.0,
+          "week_date": "2023-10-01",
+          "actual": 1776084.0,
+          "predicted": 1937810.411277088,
+          "error": 161726.4112770881
+        },
+        {
+          "row_id": 409,
+          "week_serial": 45613.0,
+          "week_date": "2024-11-17",
+          "actual": 1632449.0,
+          "predicted": 1757099.170245292,
+          "error": 124650.1702452919
+        },
+        {
+          "row_id": 160,
+          "week_serial": 43310.0,
+          "week_date": "2018-07-29",
+          "actual": 3152927.0,
+          "predicted": 3024500.573360258,
+          "error": -128426.42663974222
+        },
+        {
+          "row_id": 174,
+          "week_serial": 43408.0,
+          "week_date": "2018-11-04",
+          "actual": 2824675.0,
+          "predicted": 2948311.073842353,
+          "error": 123636.07384235319
+        },
+        {
+          "row_id": 459,
+          "week_serial": 45963.0,
+          "week_date": "2025-11-02",
+          "actual": 3434289.0,
+          "predicted": 4077067.398361924,
+          "error": 642778.3983619241
+        },
+        {
+          "row_id": 207,
+          "week_serial": 43639.0,
+          "week_date": "2019-06-23",
+          "actual": 3179856.0,
+          "predicted": 3042940.7263750453,
+          "error": -136915.27362495475
+        },
+        {
+          "row_id": 43,
+          "week_serial": 42491.0,
+          "week_date": "2016-05-01",
+          "actual": 1818758.0,
+          "predicted": 1974004.9894496573,
+          "error": 155246.98944965727
+        },
+        {
+          "row_id": 406,
+          "week_serial": 45592.0,
+          "week_date": "2024-10-27",
+          "actual": 1761086.0,
+          "predicted": 1787370.4103177446,
+          "error": 26284.410317744594
+        },
+        {
+          "row_id": 329,
+          "week_serial": 45053.0,
+          "week_date": "2023-05-07",
+          "actual": 1778225.0,
+          "predicted": 1958727.7373633047,
+          "error": 180502.7373633047
+        },
+        {
+          "row_id": 238,
+          "week_serial": 43856.0,
+          "week_date": "2020-01-26",
+          "actual": 2674005.0,
+          "predicted": 2862512.02480221,
+          "error": 188507.0248022098
+        },
+        {
+          "row_id": 457,
+          "week_serial": 45949.0,
+          "week_date": "2025-10-19",
+          "actual": 3764180.0,
+          "predicted": 4309153.295020116,
+          "error": 544973.2950201156
+        },
+        {
+          "row_id": 427,
+          "week_serial": 45739.0,
+          "week_date": "2025-03-23",
+          "actual": 2072651.0,
+          "predicted": 1936708.5033546272,
+          "error": -135942.49664537283
+        },
+        {
+          "row_id": 448,
+          "week_serial": 45886.0,
+          "week_date": "2025-08-17",
+          "actual": 2197796.0,
+          "predicted": 1781408.8163505183,
+          "error": -416387.18364948174
+        },
+        {
+          "row_id": 54,
+          "week_serial": 42568.0,
+          "week_date": "2016-07-17",
+          "actual": 2282207.0,
+          "predicted": 2068438.8910779534,
+          "error": -213768.1089220466
+        },
+        {
+          "row_id": 192,
+          "week_serial": 43534.0,
+          "week_date": "2019-03-10",
+          "actual": 3188375.0,
+          "predicted": 3003402.896719308,
+          "error": -184972.1032806919
+        },
+        {
+          "row_id": 370,
+          "week_serial": 45340.0,
+          "week_date": "2024-02-18",
+          "actual": 1961250.0,
+          "predicted": 1805405.6391972918,
+          "error": -155844.3608027082
+        },
+        {
+          "row_id": 2,
+          "week_serial": 42204.0,
+          "week_date": "2015-07-19",
+          "actual": 1288436.0,
+          "predicted": 1242617.33767321,
+          "error": -45818.66232678993
+        },
+        {
+          "row_id": 52,
+          "week_serial": 42554.0,
+          "week_date": "2016-07-03",
+          "actual": 2022790.0,
+          "predicted": 2050856.503309993,
+          "error": 28066.503309993073
+        },
+        {
+          "row_id": 93,
+          "week_serial": 42841.0,
+          "week_date": "2017-04-16",
+          "actual": 3117682.0,
+          "predicted": 2956507.205981658,
+          "error": -161174.79401834216
+        },
+        {
+          "row_id": 392,
+          "week_serial": 45494.0,
+          "week_date": "2024-07-21",
+          "actual": 1987002.0,
+          "predicted": 1935663.0104677284,
+          "error": -51338.98953227163
+        },
+        {
+          "row_id": 412,
+          "week_serial": 45634.0,
+          "week_date": "2024-12-08",
+          "actual": 2030772.0,
+          "predicted": 2226881.772517996,
+          "error": 196109.7725179959
+        },
+        {
+          "row_id": 396,
+          "week_serial": 45522.0,
+          "week_date": "2024-08-18",
+          "actual": 1778290.0,
+          "predicted": 1954100.535983285,
+          "error": 175810.53598328494
+        },
+        {
+          "row_id": 204,
+          "week_serial": 43618.0,
+          "week_date": "2019-06-02",
+          "actual": 3153319.0,
+          "predicted": 2941474.0793400435,
+          "error": -211844.92065995652
+        },
+        {
+          "row_id": 60,
+          "week_serial": 42610.0,
+          "week_date": "2016-08-28",
+          "actual": 2054058.0,
+          "predicted": 2073485.981738375,
+          "error": 19427.981738375034
+        },
+        {
+          "row_id": 134,
+          "week_serial": 43128.0,
+          "week_date": "2018-01-28",
+          "actual": 3086536.0,
+          "predicted": 3004485.206996303,
+          "error": -82050.79300369695
+        },
+        {
+          "row_id": 72,
+          "week_serial": 42694.0,
+          "week_date": "2016-11-20",
+          "actual": 2454656.0,
+          "predicted": 2329221.3531702985,
+          "error": -125434.6468297015
+        },
+        {
+          "row_id": 376,
+          "week_serial": 45382.0,
+          "week_date": "2024-03-31",
+          "actual": 2066135.0,
+          "predicted": 1949895.739308159,
+          "error": -116239.2606918409
+        },
+        {
+          "row_id": 374,
+          "week_serial": 45368.0,
+          "week_date": "2024-03-17",
+          "actual": 2004814.0,
+          "predicted": 1871950.3474064425,
+          "error": -132863.6525935575
+        },
+        {
+          "row_id": 442,
+          "week_serial": 45844.0,
+          "week_date": "2025-07-06",
+          "actual": 2110770.0,
+          "predicted": 1840034.4893870817,
+          "error": -270735.5106129183
+        },
+        {
+          "row_id": 64,
+          "week_serial": 42638.0,
+          "week_date": "2016-09-25",
+          "actual": 2419442.0,
+          "predicted": 2214055.1220959737,
+          "error": -205386.8779040263
+        },
+        {
+          "row_id": 275,
+          "week_serial": 44675.0,
+          "week_date": "2022-04-24",
+          "actual": 2445193.0,
+          "predicted": 2207614.2326521915,
+          "error": -237578.76734780846
+        },
+        {
+          "row_id": 230,
+          "week_serial": 43800.0,
+          "week_date": "2019-12-01",
+          "actual": 3379716.0,
+          "predicted": 3044110.504675264,
+          "error": -335605.495324736
+        },
+        {
+          "row_id": 206,
+          "week_serial": 43632.0,
+          "week_date": "2019-06-16",
+          "actual": 3184710.0,
+          "predicted": 2921658.6475530383,
+          "error": -263051.3524469617
+        },
+        {
+          "row_id": 236,
+          "week_serial": 43842.0,
+          "week_date": "2020-01-12",
+          "actual": 2763874.0,
+          "predicted": 3045955.425834312,
+          "error": 282081.4258343121
+        },
+        {
+          "row_id": 452,
+          "week_serial": 45914.0,
+          "week_date": "2025-09-14",
+          "actual": 3779453.0,
+          "predicted": 3149457.796483006,
+          "error": -629995.2035169941
+        },
+        {
+          "row_id": 187,
+          "week_serial": 43499.0,
+          "week_date": "2019-02-03",
+          "actual": 3128049.0,
+          "predicted": 3027547.386132377,
+          "error": -100501.6138676228
+        },
+        {
+          "row_id": 397,
+          "week_serial": 45529.0,
+          "week_date": "2024-08-25",
+          "actual": 1640394.0,
+          "predicted": 1897760.4548694582,
+          "error": 257366.45486945822
+        },
+        {
+          "row_id": 419,
+          "week_serial": 45683.0,
+          "week_date": "2025-01-26",
+          "actual": 1609120.0,
+          "predicted": 1846326.1572193292,
+          "error": 237206.15721932915
+        },
+        {
+          "row_id": 146,
+          "week_serial": 43212.0,
+          "week_date": "2018-04-22",
+          "actual": 3081677.0,
+          "predicted": 3022264.930241653,
+          "error": -59412.06975834677
+        },
+        {
+          "row_id": 8,
+          "week_serial": 42246.0,
+          "week_date": "2015-08-30",
+          "actual": 1548928.0,
+          "predicted": 1553803.3328293487,
+          "error": 4875.332829348743
+        },
+        {
+          "row_id": 418,
+          "week_serial": 45676.0,
+          "week_date": "2025-01-19",
+          "actual": 1900809.0,
+          "predicted": 1814833.7617755204,
+          "error": -85975.2382244796
+        },
+        {
+          "row_id": 462,
+          "week_serial": 45984.0,
+          "week_date": "2025-11-23",
+          "actual": 3680699.0,
+          "predicted": 4234958.6281768605,
+          "error": 554259.6281768605
+        },
+        {
+          "row_id": 165,
+          "week_serial": 43345.0,
+          "week_date": "2018-09-02",
+          "actual": 3250034.0,
+          "predicted": 3066102.785264163,
+          "error": -183931.2147358372
+        },
+        {
+          "row_id": 227,
+          "week_serial": 43779.0,
+          "week_date": "2019-11-10",
+          "actual": 3088806.0,
+          "predicted": 2739057.5752316127,
+          "error": -349748.42476838734
+        },
+        {
+          "row_id": 390,
+          "week_serial": 45480.0,
+          "week_date": "2024-07-07",
+          "actual": 1926140.0,
+          "predicted": 1947312.266212723,
+          "error": 21172.266212722985
+        },
+        {
+          "row_id": 219,
+          "week_serial": 43723.0,
+          "week_date": "2019-09-15",
+          "actual": 2904447.0,
+          "predicted": 2933901.7752714613,
+          "error": 29454.775271461345
+        }
+      ]
+    },
+    {
+      "model_id": "average_ticket_regression",
+      "target": "average_ticket",
+      "rows": [
+        {
+          "row_id": 107,
+          "week_serial": 42939.0,
+          "week_date": "2017-07-23",
+          "actual": 282.01,
+          "predicted": 276.7334584225138,
+          "error": -5.276541577486171
+        },
+        {
+          "row_id": 29,
+          "week_serial": 42393.0,
+          "week_date": "2016-01-24",
+          "actual": 161.84,
+          "predicted": 183.16009511569064,
+          "error": 21.320095115690634
+        },
+        {
+          "row_id": 394,
+          "week_serial": 45508.0,
+          "week_date": "2024-08-04",
+          "actual": 186.25,
+          "predicted": 190.5447005203232,
+          "error": 4.294700520323204
+        },
+        {
+          "row_id": 344,
+          "week_serial": 45158.0,
+          "week_date": "2023-08-20",
+          "actual": 178.42,
+          "predicted": 191.2217506149897,
+          "error": 12.801750614989714
+        },
+        {
+          "row_id": 40,
+          "week_serial": 42470.0,
+          "week_date": "2016-04-10",
+          "actual": 168.65,
+          "predicted": 185.4186564197972,
+          "error": 16.768656419797196
+        },
+        {
+          "row_id": 265,
+          "week_serial": 44605.0,
+          "week_date": "2022-02-13",
+          "actual": 201.05,
+          "predicted": 189.92645307793558,
+          "error": -11.123546922064435
+        },
+        {
+          "row_id": 149,
+          "week_serial": 43233.0,
+          "week_date": "2018-05-13",
+          "actual": 262.3,
+          "predicted": 280.4818201406723,
+          "error": 18.1818201406723
+        },
+        {
+          "row_id": 428,
+          "week_serial": 45746.0,
+          "week_date": "2025-03-30",
+          "actual": 198.77,
+          "predicted": 187.0876711036563,
+          "error": -11.682328896343705
+        },
+        {
+          "row_id": 352,
+          "week_serial": 45214.0,
+          "week_date": "2023-10-15",
+          "actual": 180.69,
+          "predicted": 190.70899777061317,
+          "error": 10.018997770613169
+        },
+        {
+          "row_id": 319,
+          "week_serial": 44983.0,
+          "week_date": "2023-02-26",
+          "actual": 181.46,
+          "predicted": 194.78373158933903,
+          "error": 13.323731589339019
+        },
+        {
+          "row_id": 166,
+          "week_serial": 43352.0,
+          "week_date": "2018-09-09",
+          "actual": 298.36,
+          "predicted": 286.5117449900234,
+          "error": -11.84825500997664
+        },
+        {
+          "row_id": 36,
+          "week_serial": 42442.0,
+          "week_date": "2016-03-13",
+          "actual": 163.5,
+          "predicted": 183.1668561577982,
+          "error": 19.666856157798208
+        },
+        {
+          "row_id": 306,
+          "week_serial": 44892.0,
+          "week_date": "2022-11-27",
+          "actual": 251.46,
+          "predicted": 193.39513183992827,
+          "error": -58.06486816007174
+        },
+        {
+          "row_id": 20,
+          "week_serial": 42330.0,
+          "week_date": "2015-11-22",
+          "actual": 135.14,
+          "predicted": 176.3579602047656,
+          "error": 41.2179602047656
+        },
+        {
+          "row_id": 105,
+          "week_serial": 42925.0,
+          "week_date": "2017-07-09",
+          "actual": 284.61,
+          "predicted": 278.0271248469266,
+          "error": -6.582875153073417
+        },
+        {
+          "row_id": 85,
+          "week_serial": 42785.0,
+          "week_date": "2017-02-19",
+          "actual": 267.1,
+          "predicted": 271.96571572803333,
+          "error": 4.865715728033308
+        },
+        {
+          "row_id": 383,
+          "week_serial": 45431.0,
+          "week_date": "2024-05-19",
+          "actual": 175.16,
+          "predicted": 179.05557122644106,
+          "error": 3.8955712264410636
+        },
+        {
+          "row_id": 201,
+          "week_serial": 43597.0,
+          "week_date": "2019-05-12",
+          "actual": 291.92,
+          "predicted": 284.58917496192146,
+          "error": -7.330825038078558
+        },
+        {
+          "row_id": 312,
+          "week_serial": 44934.0,
+          "week_date": "2023-01-08",
+          "actual": 198.62,
+          "predicted": 222.9942390898331,
+          "error": 24.374239089833083
+        },
+        {
+          "row_id": 196,
+          "week_serial": 43562.0,
+          "week_date": "2019-04-07",
+          "actual": 273.92,
+          "predicted": 286.4382235879647,
+          "error": 12.518223587964712
+        },
+        {
+          "row_id": 58,
+          "week_serial": 42596.0,
+          "week_date": "2016-08-14",
+          "actual": 190.14,
+          "predicted": 194.99682174974464,
+          "error": 4.856821749744654
+        },
+        {
+          "row_id": 331,
+          "week_serial": 45067.0,
+          "week_date": "2023-05-21",
+          "actual": 178.54,
+          "predicted": 191.29856922475466,
+          "error": 12.758569224754666
+        },
+        {
+          "row_id": 291,
+          "week_serial": 44787.0,
+          "week_date": "2022-08-14",
+          "actual": 207.19,
+          "predicted": 202.5770660103875,
+          "error": -4.612933989612486
+        },
+        {
+          "row_id": 363,
+          "week_serial": 45291.0,
+          "week_date": "2023-12-31",
+          "actual": 223.72,
+          "predicted": 219.08454932500098,
+          "error": -4.635450674999021
+        },
+        {
+          "row_id": 159,
+          "week_serial": 43303.0,
+          "week_date": "2018-07-22",
+          "actual": 292.34,
+          "predicted": 280.9553839883116,
+          "error": -11.384616011688365
+        },
+        {
+          "row_id": 63,
+          "week_serial": 42631.0,
+          "week_date": "2016-09-18",
+          "actual": 200.75,
+          "predicted": 198.4702856615267,
+          "error": -2.2797143384732976
+        },
+        {
+          "row_id": 194,
+          "week_serial": 43548.0,
+          "week_date": "2019-03-24",
+          "actual": 274.67,
+          "predicted": 284.80671184977234,
+          "error": 10.136711849772325
+        },
+        {
+          "row_id": 218,
+          "week_serial": 43716.0,
+          "week_date": "2019-09-08",
+          "actual": 270.71,
+          "predicted": 278.0374004866976,
+          "error": 7.327400486697627
+        },
+        {
+          "row_id": 186,
+          "week_serial": 43492.0,
+          "week_date": "2019-01-27",
+          "actual": 292.75,
+          "predicted": 285.5030253730044,
+          "error": -7.246974626995609
+        },
+        {
+          "row_id": 83,
+          "week_serial": 42771.0,
+          "week_date": "2017-02-05",
+          "actual": 298.92,
+          "predicted": 254.79149708024724,
+          "error": -44.128502919752776
+        },
+        {
+          "row_id": 5,
+          "week_serial": 42225.0,
+          "week_date": "2015-08-09",
+          "actual": 117.99,
+          "predicted": 148.99617453460164,
+          "error": 31.00617453460164
+        },
+        {
+          "row_id": 15,
+          "week_serial": 42295.0,
+          "week_date": "2015-10-18",
+          "actual": 137.94,
+          "predicted": 179.54146257000514,
+          "error": 41.60146257000514
+        },
+        {
+          "row_id": 253,
+          "week_serial": 44514.0,
+          "week_date": "2021-11-14",
+          "actual": 249.81,
+          "predicted": 219.40848923992226,
+          "error": -30.40151076007774
+        },
+        {
+          "row_id": 220,
+          "week_serial": 43730.0,
+          "week_date": "2019-09-22",
+          "actual": 276.56,
+          "predicted": 273.6514337740554,
+          "error": -2.9085662259445826
+        },
+        {
+          "row_id": 367,
+          "week_serial": 45319.0,
+          "week_date": "2024-01-28",
+          "actual": 163.37,
+          "predicted": 180.96300589896305,
+          "error": 17.593005898963042
+        },
+        {
+          "row_id": 79,
+          "week_serial": 42743.0,
+          "week_date": "2017-01-08",
+          "actual": 228.43,
+          "predicted": 253.5367195863881,
+          "error": 25.106719586388095
+        },
+        {
+          "row_id": 50,
+          "week_serial": 42540.0,
+          "week_date": "2016-06-19",
+          "actual": 188.51,
+          "predicted": 193.53628255238584,
+          "error": 5.026282552385851
+        },
+        {
+          "row_id": 333,
+          "week_serial": 45081.0,
+          "week_date": "2023-06-04",
+          "actual": 183.23,
+          "predicted": 190.62731988798706,
+          "error": 7.3973198879870665
+        },
+        {
+          "row_id": 407,
+          "week_serial": 45599.0,
+          "week_date": "2024-11-03",
+          "actual": 169.01,
+          "predicted": 169.78669730902902,
+          "error": 0.7766973090290321
+        },
+        {
+          "row_id": 21,
+          "week_serial": 42337.0,
+          "week_date": "2015-11-29",
+          "actual": 170.77,
+          "predicted": 170.69976755332198,
+          "error": -0.07023244667803397
+        },
+        {
+          "row_id": 399,
+          "week_serial": 45543.0,
+          "week_date": "2024-09-08",
+          "actual": 160.94,
+          "predicted": 185.61232697068385,
+          "error": 24.672326970683855
+        },
+        {
+          "row_id": 47,
+          "week_serial": 42519.0,
+          "week_date": "2016-05-29",
+          "actual": 178.38,
+          "predicted": 183.23039714044018,
+          "error": 4.8503971404401796
+        },
+        {
+          "row_id": 80,
+          "week_serial": 42750.0,
+          "week_date": "2017-01-15",
+          "actual": 227.9,
+          "predicted": 219.29854295014215,
+          "error": -8.601457049857856
+        },
+        {
+          "row_id": 373,
+          "week_serial": 45361.0,
+          "week_date": "2024-03-10",
+          "actual": 165.48,
+          "predicted": 173.83536126298532,
+          "error": 8.355361262985326
+        },
+        {
+          "row_id": 190,
+          "week_serial": 43520.0,
+          "week_date": "2019-02-24",
+          "actual": 292.88,
+          "predicted": 275.0982819523937,
+          "error": -17.78171804760632
+        },
+        {
+          "row_id": 124,
+          "week_serial": 43058.0,
+          "week_date": "2017-11-19",
+          "actual": 263.31,
+          "predicted": 281.76689058177817,
+          "error": 18.45689058177817
+        },
+        {
+          "row_id": 252,
+          "week_serial": 44507.0,
+          "week_date": "2021-11-07",
+          "actual": 249.77,
+          "predicted": 219.7249623192033,
+          "error": -30.045037680796696
+        },
+        {
+          "row_id": 350,
+          "week_serial": 45200.0,
+          "week_date": "2023-10-01",
+          "actual": 168.24,
+          "predicted": 185.52980049945688,
+          "error": 17.289800499456874
+        },
+        {
+          "row_id": 409,
+          "week_serial": 45613.0,
+          "week_date": "2024-11-17",
+          "actual": 160.82,
+          "predicted": 171.8783922537245,
+          "error": 11.05839225372452
+        },
+        {
+          "row_id": 160,
+          "week_serial": 43310.0,
+          "week_date": "2018-07-29",
+          "actual": 293.13,
+          "predicted": 282.2897868095162,
+          "error": -10.84021319048378
+        },
+        {
+          "row_id": 174,
+          "week_serial": 43408.0,
+          "week_date": "2018-11-04",
+          "actual": 263.15,
+          "predicted": 274.8240995138791,
+          "error": 11.674099513879128
+        },
+        {
+          "row_id": 459,
+          "week_serial": 45963.0,
+          "week_date": "2025-11-02",
+          "actual": 320.0,
+          "predicted": 375.67398220773674,
+          "error": 55.67398220773674
+        },
+        {
+          "row_id": 207,
+          "week_serial": 43639.0,
+          "week_date": "2019-06-23",
+          "actual": 295.58,
+          "predicted": 284.5302791086123,
+          "error": -11.049720891387665
+        },
+        {
+          "row_id": 43,
+          "week_serial": 42491.0,
+          "week_date": "2016-05-01",
+          "actual": 169.12,
+          "predicted": 185.0543147220178,
+          "error": 15.934314722017803
+        },
+        {
+          "row_id": 406,
+          "week_serial": 45592.0,
+          "week_date": "2024-10-27",
+          "actual": 169.58,
+          "predicted": 174.6763933373393,
+          "error": 5.096393337339293
+        },
+        {
+          "row_id": 329,
+          "week_serial": 45053.0,
+          "week_date": "2023-05-07",
+          "actual": 166.64,
+          "predicted": 187.34996058239037,
+          "error": 20.70996058239038
+        },
+        {
+          "row_id": 238,
+          "week_serial": 43856.0,
+          "week_date": "2020-01-26",
+          "actual": 248.7,
+          "predicted": 266.8578294044031,
+          "error": 18.157829404403117
+        },
+        {
+          "row_id": 457,
+          "week_serial": 45949.0,
+          "week_date": "2025-10-19",
+          "actual": 350.09,
+          "predicted": 398.79230696603884,
+          "error": 48.70230696603886
+        },
+        {
+          "row_id": 427,
+          "week_serial": 45739.0,
+          "week_date": "2025-03-23",
+          "actual": 193.78,
+          "predicted": 187.63762349422933,
+          "error": -6.14237650577067
+        },
+        {
+          "row_id": 448,
+          "week_serial": 45886.0,
+          "week_date": "2025-08-17",
+          "actual": 204.6,
+          "predicted": 172.89131953908478,
+          "error": -31.708680460915218
+        },
+        {
+          "row_id": 54,
+          "week_serial": 42568.0,
+          "week_date": "2016-07-17",
+          "actual": 189.35,
+          "predicted": 194.56770953673612,
+          "error": 5.217709536736123
+        },
+        {
+          "row_id": 192,
+          "week_serial": 43534.0,
+          "week_date": "2019-03-10",
+          "actual": 296.48,
+          "predicted": 280.4584705586995,
+          "error": -16.021529441300515
+        },
+        {
+          "row_id": 370,
+          "week_serial": 45340.0,
+          "week_date": "2024-02-18",
+          "actual": 183.55,
+          "predicted": 173.83201705314755,
+          "error": -9.717982946852459
+        },
+        {
+          "row_id": 2,
+          "week_serial": 42204.0,
+          "week_date": "2015-07-19",
+          "actual": 138.94,
+          "predicted": 123.70595441399377,
+          "error": -15.234045586006232
+        },
+        {
+          "row_id": 52,
+          "week_serial": 42554.0,
+          "week_date": "2016-07-03",
+          "actual": 188.36,
+          "predicted": 192.81135539110204,
+          "error": 4.451355391102027
+        },
+        {
+          "row_id": 93,
+          "week_serial": 42841.0,
+          "week_date": "2017-04-16",
+          "actual": 289.94,
+          "predicted": 274.935805586592,
+          "error": -15.004194413408015
+        },
+        {
+          "row_id": 392,
+          "week_serial": 45494.0,
+          "week_date": "2024-07-21",
+          "actual": 185.15,
+          "predicted": 186.71516147333162,
+          "error": 1.5651614733316137
+        },
+        {
+          "row_id": 412,
+          "week_serial": 45634.0,
+          "week_date": "2024-12-08",
+          "actual": 204.14,
+          "predicted": 215.6293738797781,
+          "error": 11.4893738797781
+        },
+        {
+          "row_id": 396,
+          "week_serial": 45522.0,
+          "week_date": "2024-08-18",
+          "actual": 179.59,
+          "predicted": 188.7117129328382,
+          "error": 9.121712932838193
+        },
+        {
+          "row_id": 204,
+          "week_serial": 43618.0,
+          "week_date": "2019-06-02",
+          "actual": 293.2,
+          "predicted": 274.39817564823073,
+          "error": -18.801824351769255
+        },
+        {
+          "row_id": 60,
+          "week_serial": 42610.0,
+          "week_date": "2016-08-28",
+          "actual": 191.02,
+          "predicted": 195.12235171137763,
+          "error": 4.102351711377622
+        },
+        {
+          "row_id": 134,
+          "week_serial": 43128.0,
+          "week_date": "2018-01-28",
+          "actual": 286.99,
+          "predicted": 280.07140421119266,
+          "error": -6.918595788807352
+        },
+        {
+          "row_id": 72,
+          "week_serial": 42694.0,
+          "week_date": "2016-11-20",
+          "actual": 228.3,
+          "predicted": 219.04251638654387,
+          "error": -9.257483613456145
+        },
+        {
+          "row_id": 376,
+          "week_serial": 45382.0,
+          "week_date": "2024-03-31",
+          "actual": 192.79,
+          "predicted": 188.09983606043085,
+          "error": -4.690163939569146
+        },
+        {
+          "row_id": 374,
+          "week_serial": 45368.0,
+          "week_date": "2024-03-17",
+          "actual": 187.52,
+          "predicted": 180.22088633013988,
+          "error": -7.299113669860134
+        },
+        {
+          "row_id": 442,
+          "week_serial": 45844.0,
+          "week_date": "2025-07-06",
+          "actual": 196.5,
+          "predicted": 179.25808841461648,
+          "error": -17.24191158538352
+        },
+        {
+          "row_id": 64,
+          "week_serial": 42638.0,
+          "week_date": "2016-09-25",
+          "actual": 199.95,
+          "predicted": 207.48673580880407,
+          "error": 7.536735808804082
+        },
+        {
+          "row_id": 275,
+          "week_serial": 44675.0,
+          "week_date": "2022-04-24",
+          "actual": 230.44,
+          "predicted": 211.7147909709669,
+          "error": -18.725209029033095
+        },
+        {
+          "row_id": 230,
+          "week_serial": 43800.0,
+          "week_date": "2019-12-01",
+          "actual": 314.22,
+          "predicted": 281.5128849056426,
+          "error": -32.70711509435745
+        },
+        {
+          "row_id": 206,
+          "week_serial": 43632.0,
+          "week_date": "2019-06-16",
+          "actual": 295.98,
+          "predicted": 272.4387129072823,
+          "error": -23.54128709271771
+        },
+        {
+          "row_id": 236,
+          "week_serial": 43842.0,
+          "week_date": "2020-01-12",
+          "actual": 256.99,
+          "predicted": 285.1387130687755,
+          "error": 28.148713068775464
+        },
+        {
+          "row_id": 452,
+          "week_serial": 45914.0,
+          "week_date": "2025-09-14",
+          "actual": 352.36,
+          "predicted": 289.95100254800406,
+          "error": -62.40899745199596
+        },
+        {
+          "row_id": 187,
+          "week_serial": 43499.0,
+          "week_date": "2019-02-03",
+          "actual": 290.87,
+          "predicted": 282.8241397155191,
+          "error": -8.04586028448091
+        },
+        {
+          "row_id": 397,
+          "week_serial": 45529.0,
+          "week_date": "2024-08-25",
+          "actual": 171.61,
+          "predicted": 183.49221356707304,
+          "error": 11.882213567073023
+        },
+        {
+          "row_id": 419,
+          "week_serial": 45683.0,
+          "week_date": "2025-01-26",
+          "actual": 163.69,
+          "predicted": 180.08398169978867,
+          "error": 16.393981699788668
+        },
+        {
+          "row_id": 146,
+          "week_serial": 43212.0,
+          "week_date": "2018-04-22",
+          "actual": 286.51,
+          "predicted": 281.947299338286,
+          "error": -4.562700661714018
+        },
+        {
+          "row_id": 8,
+          "week_serial": 42246.0,
+          "week_date": "2015-08-30",
+          "actual": 144.62,
+          "predicted": 147.44855998370846,
+          "error": 2.828559983708459
+        },
+        {
+          "row_id": 418,
+          "week_serial": 45676.0,
+          "week_date": "2025-01-19",
+          "actual": 190.14,
+          "predicted": 176.54244328419122,
+          "error": -13.597556715808764
+        },
+        {
+          "row_id": 462,
+          "week_serial": 45984.0,
+          "week_date": "2025-11-23",
+          "actual": 342.96,
+          "predicted": 391.434276069971,
+          "error": 48.47427606997104
+        },
+        {
+          "row_id": 165,
+          "week_serial": 43345.0,
+          "week_date": "2018-09-02",
+          "actual": 302.16,
+          "predicted": 286.4821626585209,
+          "error": -15.677837341479119
+        },
+        {
+          "row_id": 227,
+          "week_serial": 43779.0,
+          "week_date": "2019-11-10",
+          "actual": 287.06,
+          "predicted": 254.47148074470073,
+          "error": -32.588519255299275
+        },
+        {
+          "row_id": 390,
+          "week_serial": 45480.0,
+          "week_date": "2024-07-07",
+          "actual": 179.85,
+          "predicted": 187.83105472046628,
+          "error": 7.98105472046629
+        },
+        {
+          "row_id": 219,
+          "week_serial": 43723.0,
+          "week_date": "2019-09-15",
+          "actual": 270.11,
+          "predicted": 273.8020810335144,
+          "error": 3.6920810335143983
+        }
+      ]
+    },
+    {
+      "model_id": "sellout_flag_classifier",
+      "target": "sellout_flag",
+      "rows": [
+        {
+          "row_id": 107,
+          "week_serial": 42939.0,
+          "week_date": "2017-07-23",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.996138006918727
+        },
+        {
+          "row_id": 29,
+          "week_serial": 42393.0,
+          "week_date": "2016-01-24",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.9897716648728632
+        },
+        {
+          "row_id": 394,
+          "week_serial": 45508.0,
+          "week_date": "2024-08-04",
+          "actual": 0,
+          "predicted": 0,
+          "predicted_probability": 0.4686141129290073
+        },
+        {
+          "row_id": 344,
+          "week_serial": 45158.0,
+          "week_date": "2023-08-20",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.5932827275510268
+        },
+        {
+          "row_id": 40,
+          "week_serial": 42470.0,
+          "week_date": "2016-04-10",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.9506008371629927
+        },
+        {
+          "row_id": 265,
+          "week_serial": 44605.0,
+          "week_date": "2022-02-13",
+          "actual": 0,
+          "predicted": 1,
+          "predicted_probability": 0.5965356242738666
+        },
+        {
+          "row_id": 149,
+          "week_serial": 43233.0,
+          "week_date": "2018-05-13",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.9951717438079805
+        },
+        {
+          "row_id": 428,
+          "week_serial": 45746.0,
+          "week_date": "2025-03-30",
+          "actual": 1,
+          "predicted": 0,
+          "predicted_probability": 0.36378667269412
+        },
+        {
+          "row_id": 352,
+          "week_serial": 45214.0,
+          "week_date": "2023-10-15",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.5687360229126569
+        },
+        {
+          "row_id": 319,
+          "week_serial": 44983.0,
+          "week_date": "2023-02-26",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.6446386554658884
+        },
+        {
+          "row_id": 166,
+          "week_serial": 43352.0,
+          "week_date": "2018-09-09",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.9953418182101295
+        },
+        {
+          "row_id": 36,
+          "week_serial": 42442.0,
+          "week_date": "2016-03-13",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.9495227414528392
+        },
+        {
+          "row_id": 306,
+          "week_serial": 44892.0,
+          "week_date": "2022-11-27",
+          "actual": 0,
+          "predicted": 1,
+          "predicted_probability": 0.6423012536496561
+        },
+        {
+          "row_id": 20,
+          "week_serial": 42330.0,
+          "week_date": "2015-11-22",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.9468282152539587
+        },
+        {
+          "row_id": 105,
+          "week_serial": 42925.0,
+          "week_date": "2017-07-09",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.9962958743960538
+        },
+        {
+          "row_id": 85,
+          "week_serial": 42785.0,
+          "week_date": "2017-02-19",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.9962726546922133
+        },
+        {
+          "row_id": 383,
+          "week_serial": 45431.0,
+          "week_date": "2024-05-19",
+          "actual": 1,
+          "predicted": 0,
+          "predicted_probability": 0.42255335609620226
+        },
+        {
+          "row_id": 201,
+          "week_serial": 43597.0,
+          "week_date": "2019-05-12",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.9938375558606526
+        },
+        {
+          "row_id": 312,
+          "week_serial": 44934.0,
+          "week_date": "2023-01-08",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.7803097725250457
+        },
+        {
+          "row_id": 196,
+          "week_serial": 43562.0,
+          "week_date": "2019-04-07",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.994177221656045
+        },
+        {
+          "row_id": 58,
+          "week_serial": 42596.0,
+          "week_date": "2016-08-14",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.9547473266485509
+        },
+        {
+          "row_id": 331,
+          "week_serial": 45067.0,
+          "week_date": "2023-05-21",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.5965737358056799
+        },
+        {
+          "row_id": 291,
+          "week_serial": 44787.0,
+          "week_date": "2022-08-14",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.7286650921502076
+        },
+        {
+          "row_id": 363,
+          "week_serial": 45291.0,
+          "week_date": "2023-12-31",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.7582552805100676
+        },
+        {
+          "row_id": 159,
+          "week_serial": 43303.0,
+          "week_date": "2018-07-22",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.9950048663870302
+        },
+        {
+          "row_id": 63,
+          "week_serial": 42631.0,
+          "week_date": "2016-09-18",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.9566569120837699
+        },
+        {
+          "row_id": 194,
+          "week_serial": 43548.0,
+          "week_date": "2019-03-24",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.9940663724078008
+        },
+        {
+          "row_id": 218,
+          "week_serial": 43716.0,
+          "week_date": "2019-09-08",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.9919813612935575
+        },
+        {
+          "row_id": 186,
+          "week_serial": 43492.0,
+          "week_date": "2019-01-27",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.9945352984870587
+        },
+        {
+          "row_id": 83,
+          "week_serial": 42771.0,
+          "week_date": "2017-02-05",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.9949504669944923
+        },
+        {
+          "row_id": 5,
+          "week_serial": 42225.0,
+          "week_date": "2015-08-09",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.8576822603626306
+        },
+        {
+          "row_id": 15,
+          "week_serial": 42295.0,
+          "week_date": "2015-10-18",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.9514588729853507
+        },
+        {
+          "row_id": 253,
+          "week_serial": 44514.0,
+          "week_date": "2021-11-14",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.8342461764591741
+        },
+        {
+          "row_id": 220,
+          "week_serial": 43730.0,
+          "week_date": "2019-09-22",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.9909198634643253
+        },
+        {
+          "row_id": 367,
+          "week_serial": 45319.0,
+          "week_date": "2024-01-28",
+          "actual": 0,
+          "predicted": 0,
+          "predicted_probability": 0.44528170493893804
+        },
+        {
+          "row_id": 79,
+          "week_serial": 42743.0,
+          "week_date": "2017-01-08",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.9871835423374917
+        },
+        {
+          "row_id": 50,
+          "week_serial": 42540.0,
+          "week_date": "2016-06-19",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.9557416788693354
+        },
+        {
+          "row_id": 333,
+          "week_serial": 45081.0,
+          "week_date": "2023-06-04",
+          "actual": 0,
+          "predicted": 1,
+          "predicted_probability": 0.6063468383762095
+        },
+        {
+          "row_id": 407,
+          "week_serial": 45599.0,
+          "week_date": "2024-11-03",
+          "actual": 0,
+          "predicted": 0,
+          "predicted_probability": 0.2668926337684184
+        },
+        {
+          "row_id": 21,
+          "week_serial": 42337.0,
+          "week_date": "2015-11-29",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.9419373129497909
+        },
+        {
+          "row_id": 399,
+          "week_serial": 45543.0,
+          "week_date": "2024-09-08",
+          "actual": 0,
+          "predicted": 0,
+          "predicted_probability": 0.4061681336887355
+        },
+        {
+          "row_id": 47,
+          "week_serial": 42519.0,
+          "week_date": "2016-05-29",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.9466195360984544
+        },
+        {
+          "row_id": 80,
+          "week_serial": 42750.0,
+          "week_date": "2017-01-15",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.9744648818894784
+        },
+        {
+          "row_id": 373,
+          "week_serial": 45361.0,
+          "week_date": "2024-03-10",
+          "actual": 1,
+          "predicted": 0,
+          "predicted_probability": 0.3806807794612319
+        },
+        {
+          "row_id": 190,
+          "week_serial": 43520.0,
+          "week_date": "2019-02-24",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.9930426419439864
+        },
+        {
+          "row_id": 124,
+          "week_serial": 43058.0,
+          "week_date": "2017-11-19",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.9960289371916342
+        },
+        {
+          "row_id": 252,
+          "week_serial": 44507.0,
+          "week_date": "2021-11-07",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.8350791009052675
+        },
+        {
+          "row_id": 350,
+          "week_serial": 45200.0,
+          "week_date": "2023-10-01",
+          "actual": 0,
+          "predicted": 1,
+          "predicted_probability": 0.5413160437371336
+        },
+        {
+          "row_id": 409,
+          "week_serial": 45613.0,
+          "week_date": "2024-11-17",
+          "actual": 0,
+          "predicted": 0,
+          "predicted_probability": 0.24887890080938602
+        },
+        {
+          "row_id": 160,
+          "week_serial": 43310.0,
+          "week_date": "2018-07-29",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.9951078961365684
+        },
+        {
+          "row_id": 174,
+          "week_serial": 43408.0,
+          "week_date": "2018-11-04",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.9935683754722002
+        },
+        {
+          "row_id": 459,
+          "week_serial": 45963.0,
+          "week_date": "2025-11-02",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.9985824371110037
+        },
+        {
+          "row_id": 207,
+          "week_serial": 43639.0,
+          "week_date": "2019-06-23",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.9935944829467478
+        },
+        {
+          "row_id": 43,
+          "week_serial": 42491.0,
+          "week_date": "2016-05-01",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.9494148426294611
+        },
+        {
+          "row_id": 406,
+          "week_serial": 45592.0,
+          "week_date": "2024-10-27",
+          "actual": 0,
+          "predicted": 0,
+          "predicted_probability": 0.2776275626349554
+        },
+        {
+          "row_id": 329,
+          "week_serial": 45053.0,
+          "week_date": "2023-05-07",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.5919810869901925
+        },
+        {
+          "row_id": 238,
+          "week_serial": 43856.0,
+          "week_date": "2020-01-26",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.9880234675874823
+        },
+        {
+          "row_id": 457,
+          "week_serial": 45949.0,
+          "week_date": "2025-10-19",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.9991497191212272
+        },
+        {
+          "row_id": 427,
+          "week_serial": 45739.0,
+          "week_date": "2025-03-23",
+          "actual": 1,
+          "predicted": 0,
+          "predicted_probability": 0.38500700133934584
+        },
+        {
+          "row_id": 448,
+          "week_serial": 45886.0,
+          "week_date": "2025-08-17",
+          "actual": 1,
+          "predicted": 0,
+          "predicted_probability": 0.27517199658613883
+        },
+        {
+          "row_id": 54,
+          "week_serial": 42568.0,
+          "week_date": "2016-07-17",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.9065471518999807
+        },
+        {
+          "row_id": 192,
+          "week_serial": 43534.0,
+          "week_date": "2019-03-10",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.9937186804508854
+        },
+        {
+          "row_id": 370,
+          "week_serial": 45340.0,
+          "week_date": "2024-02-18",
+          "actual": 1,
+          "predicted": 0,
+          "predicted_probability": 0.39968554668255507
+        },
+        {
+          "row_id": 2,
+          "week_serial": 42204.0,
+          "week_date": "2015-07-19",
+          "actual": 1,
+          "predicted": 0,
+          "predicted_probability": 0.4316049886583703
+        },
+        {
+          "row_id": 52,
+          "week_serial": 42554.0,
+          "week_date": "2016-07-03",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.9543182301165561
+        },
+        {
+          "row_id": 93,
+          "week_serial": 42841.0,
+          "week_date": "2017-04-16",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.9963791439326058
+        },
+        {
+          "row_id": 392,
+          "week_serial": 45494.0,
+          "week_date": "2024-07-21",
+          "actual": 1,
+          "predicted": 0,
+          "predicted_probability": 0.4512710244328068
+        },
+        {
+          "row_id": 412,
+          "week_serial": 45634.0,
+          "week_date": "2024-12-08",
+          "actual": 0,
+          "predicted": 1,
+          "predicted_probability": 0.5695820680153807
+        },
+        {
+          "row_id": 396,
+          "week_serial": 45522.0,
+          "week_date": "2024-08-18",
+          "actual": 0,
+          "predicted": 0,
+          "predicted_probability": 0.44349766390659195
+        },
+        {
+          "row_id": 204,
+          "week_serial": 43618.0,
+          "week_date": "2019-06-02",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.9922489292371623
+        },
+        {
+          "row_id": 60,
+          "week_serial": 42610.0,
+          "week_date": "2016-08-28",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.9543001561479111
+        },
+        {
+          "row_id": 134,
+          "week_serial": 43128.0,
+          "week_date": "2018-01-28",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.9956856213114343
+        },
+        {
+          "row_id": 72,
+          "week_serial": 42694.0,
+          "week_date": "2016-11-20",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.9756641756786408
+        },
+        {
+          "row_id": 376,
+          "week_serial": 45382.0,
+          "week_date": "2024-03-31",
+          "actual": 1,
+          "predicted": 0,
+          "predicted_probability": 0.4784669939107452
+        },
+        {
+          "row_id": 374,
+          "week_serial": 45368.0,
+          "week_date": "2024-03-17",
+          "actual": 1,
+          "predicted": 0,
+          "predicted_probability": 0.4481215369834503
+        },
+        {
+          "row_id": 442,
+          "week_serial": 45844.0,
+          "week_date": "2025-07-06",
+          "actual": 1,
+          "predicted": 0,
+          "predicted_probability": 0.29255754665964595
+        },
+        {
+          "row_id": 64,
+          "week_serial": 42638.0,
+          "week_date": "2016-09-25",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.9366338521664938
+        },
+        {
+          "row_id": 275,
+          "week_serial": 44675.0,
+          "week_date": "2022-04-24",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.7830843304699286
+        },
+        {
+          "row_id": 230,
+          "week_serial": 43800.0,
+          "week_date": "2019-12-01",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.9947873139228719
+        },
+        {
+          "row_id": 206,
+          "week_serial": 43632.0,
+          "week_date": "2019-06-16",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.9918457710588602
+        },
+        {
+          "row_id": 236,
+          "week_serial": 43842.0,
+          "week_date": "2020-01-12",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.9918702956014488
+        },
+        {
+          "row_id": 452,
+          "week_serial": 45914.0,
+          "week_date": "2025-09-14",
+          "actual": 0,
+          "predicted": 0,
+          "predicted_probability": 2.3214159027773625e-18
+        },
+        {
+          "row_id": 187,
+          "week_serial": 43499.0,
+          "week_date": "2019-02-03",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.9941839518585707
+        },
+        {
+          "row_id": 397,
+          "week_serial": 45529.0,
+          "week_date": "2024-08-25",
+          "actual": 0,
+          "predicted": 0,
+          "predicted_probability": 0.383549712436109
+        },
+        {
+          "row_id": 419,
+          "week_serial": 45683.0,
+          "week_date": "2025-01-26",
+          "actual": 0,
+          "predicted": 0,
+          "predicted_probability": 0.29232572557598585
+        },
+        {
+          "row_id": 146,
+          "week_serial": 43212.0,
+          "week_date": "2018-04-22",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.9954941315430937
+        },
+        {
+          "row_id": 8,
+          "week_serial": 42246.0,
+          "week_date": "2015-08-30",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.8562796010751366
+        },
+        {
+          "row_id": 418,
+          "week_serial": 45676.0,
+          "week_date": "2025-01-19",
+          "actual": 0,
+          "predicted": 0,
+          "predicted_probability": 0.31009198536989424
+        },
+        {
+          "row_id": 462,
+          "week_serial": 45984.0,
+          "week_date": "2025-11-23",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.9989730472015587
+        },
+        {
+          "row_id": 165,
+          "week_serial": 43345.0,
+          "week_date": "2018-09-02",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.9953843387979592
+        },
+        {
+          "row_id": 227,
+          "week_serial": 43779.0,
+          "week_date": "2019-11-10",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.9860655388950637
+        },
+        {
+          "row_id": 390,
+          "week_serial": 45480.0,
+          "week_date": "2024-07-07",
+          "actual": 1,
+          "predicted": 0,
+          "predicted_probability": 0.46156293636729945
+        },
+        {
+          "row_id": 219,
+          "week_serial": 43723.0,
+          "week_date": "2019-09-15",
+          "actual": 1,
+          "predicted": 1,
+          "predicted_probability": 0.9910255533885729
+        }
+      ]
+    }
+  ]
+}

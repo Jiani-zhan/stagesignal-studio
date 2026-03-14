@@ -1,0 +1,56 @@
+[
+  {
+    "scenario_name": "conservative",
+    "base_price": 74.92,
+    "premium_price": 118.37,
+    "expected_attendance": 239,
+    "expected_occupancy_pct": 0.8536,
+    "expected_revenue": 18373.34,
+    "revenue_p10": 15169.03,
+    "revenue_p90": 20107.78,
+    "channel_emphasis": [
+      "instagram_reels",
+      "youtube_trailer",
+      "spotify_audio_teaser"
+    ],
+    "source_file": "assets/data/hero_segments.json",
+    "source_sheet": "hero_segments",
+    "is_synthetic": true
+  },
+  {
+    "scenario_name": "base",
+    "base_price": 74.92,
+    "premium_price": 118.37,
+    "expected_attendance": 274,
+    "expected_occupancy_pct": 0.9786,
+    "expected_revenue": 23861.56,
+    "revenue_p10": 20520.94,
+    "revenue_p90": 27202.18,
+    "channel_emphasis": [
+      "instagram_reels",
+      "youtube_trailer",
+      "spotify_audio_teaser"
+    ],
+    "source_file": "assets/data/hero_segments.json",
+    "source_sheet": "hero_segments",
+    "is_synthetic": true
+  },
+  {
+    "scenario_name": "optimistic",
+    "base_price": 74.92,
+    "premium_price": 118.37,
+    "expected_attendance": 280,
+    "expected_occupancy_pct": 1.0,
+    "expected_revenue": 26242.0,
+    "revenue_p10": 23922.21,
+    "revenue_p90": 31710.83,
+    "channel_emphasis": [
+      "instagram_reels",
+      "youtube_trailer",
+      "spotify_audio_teaser"
+    ],
+    "source_file": "assets/data/hero_segments.json",
+    "source_sheet": "hero_segments",
+    "is_synthetic": true
+  }
+]

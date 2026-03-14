@@ -1,0 +1,91 @@
+{
+  "generated_by": "scripts/build_demo_data.py",
+  "deterministic_seed": 20260314,
+  "coverage": [
+    {
+      "artifact": "assets/data/events_comps.json",
+      "spec_section": "5.3A Comparable events table",
+      "required_fields": [
+        "event_id",
+        "event_name",
+        "event_type",
+        "city",
+        "venue_name",
+        "venue_capacity",
+        "event_date",
+        "launch_window_days",
+        "positioning_statement",
+        "genre_tags",
+        "language_context",
+        "ticket_price_low",
+        "ticket_price_mid",
+        "ticket_price_high",
+        "bundle_available",
+        "student_discount",
+        "premium_experience",
+        "social_posts_count",
+        "engagement_proxy",
+        "sellout_proxy",
+        "attendance_proxy",
+        "earned_media_count",
+        "partner_branding",
+        "notes"
+      ],
+      "status": "covered"
+    },
+    {
+      "artifact": "assets/data/audience_text.json",
+      "spec_section": "5.3B Audience text corpus",
+      "required_fields": [
+        "text_id",
+        "source",
+        "source_type",
+        "event_reference",
+        "raw_text",
+        "date",
+        "city_context",
+        "language",
+        "engagement_signal"
+      ],
+      "status": "covered"
+    },
+    {
+      "artifact": "assets/data/survey_responses.json",
+      "spec_section": "5.3C Micro-survey (Gabor-Granger + Van Westendorp)",
+      "required_fields": [
+        "price_shown",
+        "purchase_intent_binary",
+        "purchase_intent_likert",
+        "too_cheap",
+        "cheap",
+        "expensive",
+        "too_expensive"
+      ],
+      "status": "covered"
+    },
+    {
+      "artifact": "assets/data/channel_metrics.json",
+      "spec_section": "5.3D Channel metrics",
+      "required_fields": [
+        "channel",
+        "audience_size_proxy",
+        "historical_ctr",
+        "estimated_conversion",
+        "cpm_or_cost_proxy"
+      ],
+      "status": "covered"
+    },
+    {
+      "artifact": "assets/data/hero_*.json",
+      "spec_section": "21 Demo-mode data bundle",
+      "required_fields": [
+        "hero_event_brief",
+        "hero_segments",
+        "hero_demand_scenarios",
+        "hero_pricing_recommendation",
+        "hero_memo"
+      ],
+      "status": "covered"
+    }
+  ]
+}

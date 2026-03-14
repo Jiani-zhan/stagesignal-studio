@@ -1,0 +1,79 @@
+{
+  "generated_at_utc": "2026-03-14T19:34:31+00:00",
+  "pipeline_version": "1.0.0",
+  "deterministic_seed": 20260314,
+  "source_inventory": [
+    {
+      "source_file": "Final presentation/Data Collection & Visualization.xlsx",
+      "status": "parsed",
+      "sheets": [
+        "Audience Demographics",
+        "Broadway Revenue",
+        "Streaming Data"
+      ],
+      "row_counts": {
+        "Audience Demographics": 11,
+        "Broadway Revenue": 463,
+        "Streaming Data": 21
+      }
+    },
+    {
+      "source_file": "Final presentation/B1.xlsx",
+      "status": "parsed",
+      "sheets": [
+        "Sheet1"
+      ],
+      "row_counts": {
+        "Sheet1": 13
+      }
+    },
+    {
+      "source_file": "Final presentation/B2.xlsx",
+      "status": "parsed",
+      "sheets": [
+        "Sheet1"
+      ],
+      "row_counts": {
+        "Sheet1": 10
+      }
+    },
+    {
+      "source_file": "Final presentation/C2.xlsx",
+      "status": "parsed",
+      "sheets": [
+        "Sheet1"
+      ],
+      "row_counts": {
+        "Sheet1": 9
+      }
+    },
+    {
+      "source_file": "Final presentation/B3/Audience.pdf",
+      "status": "referenced",
+      "usage": "Theme and quote grounding for audience text and channels"
+    },
+    {
+      "source_file": "Final presentation/A1/Hamilton data report from Broadway World.xlt",
+      "status": "fallback_not_parsed",
+      "reason": "Binary .xlt format is not robustly parseable with stdlib-only zip+xml parser.",
+      "fallback_used": "Equivalent Broadway weekly table from Data Collection & Visualization.xlsx::Broadway Revenue",
+      "file_exists": true
+    }
+  ],
+  "table_row_counts": {
+    "events_comps": 124,
+    "audience_text": 528,
+    "survey_responses": 140,
+    "channel_metrics": 7
+  },
+  "missing_value_audit": {
+    "events_comps_missing_ticket_mid": 0,
+    "audience_text_missing_engagement": 0,
+    "survey_missing_price_fields": 0,
+    "channel_missing_cost_proxy": 0
+  },
+  "warnings": [
+    "Synthetic records are clearly labeled with is_synthetic and assumption_note fields.",
+    "Memo should be treated as decision-support narrative, not guaranteed forecast output."
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "headline": "Launch Beethoven After Dark at premium-accessible pricing with digital-first channel mix.",
+  "objective": "Maximize first-run revenue while preserving student-accessible entry points and occupancy confidence.",
+  "top_segments": [
+    "Broadway Experience Enthusiasts",
+    "Classical Purists"
+  ],
+  "pricing_decision": "Set GA at $74.92, premium at $118.37, and student guardrail at $50.20.",
+  "channel_decision": "Prioritize instagram_reels, youtube_trailer, spotify_audio_teaser for launch-week conversion.",
+  "positioning_decision": "Lead with narrative immersion plus Beethoven authenticity; message quality and social shareability equally.",
+  "key_risks": [
+    "Survey responses are synthetic and should be replaced with live pilot responses before go-live pricing.",
+    "Revenue scenarios are simulation outputs, not audited forecasts.",
+    "Channel conversion priors are proxy estimates from social reach tables."
+  ],
+  "next_experiment": "Run a 2-week paid creative test comparing performance-led vs social-proof-led ad sets at GA $74 and $79.",
+  "support_metrics": {
+    "expected_attendance_base": 274,
+    "expected_occupancy_pct_base": 0.9786,
+    "expected_revenue_base": 23861.56,
+    "revenue_interval_base": "20520.94 - 27202.18",
+    "acceptable_price_low": 49.99,
+    "acceptable_price_high": 100.38,
+    "recommended_ga_price": 74.92,
+    "recommended_premium_price": 118.37
+  },
+  "evidence_links": {
+    "segments": "assets/data/hero_segments.json",
+    "demand": "assets/data/hero_demand_scenarios.json",
+    "pricing": "assets/data/hero_pricing_recommendation.json"
+  },
+  "source_file": "assets/data",
+  "source_sheet": "hero_artifacts",
+  "is_synthetic": true
+}

@@ -1,0 +1,118 @@
+[
+  {
+    "segment_id": "seg_1",
+    "segment_name": "Broadway Experience Enthusiasts",
+    "segment_size_pct": 0.3,
+    "motivations": [
+      "production scale",
+      "narrative spectacle"
+    ],
+    "barriers": [
+      "weak storytelling cohesion",
+      "underpowered staging"
+    ],
+    "preferred_channels": [
+      "instagram_reels",
+      "youtube_trailer",
+      "search_ads"
+    ],
+    "avg_wtp": 72.29,
+    "price_sensitivity": "medium",
+    "representative_themes": [
+      "production scale",
+      "narrative spectacle",
+      "premium seating"
+    ],
+    "expected_conversion_base": 0.6905,
+    "source_file": "assets/data/survey_responses.json",
+    "source_sheet": "survey_responses",
+    "is_synthetic": true
+  },
+  {
+    "segment_id": "seg_2",
+    "segment_name": "Classical Purists",
+    "segment_size_pct": 0.2714,
+    "motivations": [
+      "musical excellence",
+      "orchestral authenticity"
+    ],
+    "barriers": [
+      "over-gamified format",
+      "unclear repertoire depth"
+    ],
+    "preferred_channels": [
+      "email_newsletter",
+      "youtube_trailer",
+      "search_ads"
+    ],
+    "avg_wtp": 61.33,
+    "price_sensitivity": "medium",
+    "representative_themes": [
+      "musical excellence",
+      "orchestral authenticity",
+      "evening cultural ritual"
+    ],
+    "expected_conversion_base": 0.5526,
+    "source_file": "assets/data/survey_responses.json",
+    "source_sheet": "survey_responses",
+    "is_synthetic": true
+  },
+  {
+    "segment_id": "seg_3",
+    "segment_name": "Cultural Trend Seekers",
+    "segment_size_pct": 0.2,
+    "motivations": [
+      "shareable moments",
+      "social discovery"
+    ],
+    "barriers": [
+      "boring creative direction",
+      "slow social proof"
+    ],
+    "preferred_channels": [
+      "instagram_reels",
+      "tiktok_short_video",
+      "creator_partnerships"
+    ],
+    "avg_wtp": 48.38,
+    "price_sensitivity": "high",
+    "representative_themes": [
+      "shareable moments",
+      "social discovery",
+      "visual immersion"
+    ],
+    "expected_conversion_base": 0.4286,
+    "source_file": "assets/data/survey_responses.json",
+    "source_sheet": "survey_responses",
+    "is_synthetic": true
+  },
+  {
+    "segment_id": "seg_4",
+    "segment_name": "International Young Professionals",
+    "segment_size_pct": 0.2286,
+    "motivations": [
+      "after-work culture",
+      "group plans"
+    ],
+    "barriers": [
+      "late purchase friction",
+      "transport timing"
+    ],
+    "preferred_channels": [
+      "instagram_reels",
+      "tiktok_short_video",
+      "email_newsletter"
+    ],
+    "avg_wtp": 39.19,
+    "price_sensitivity": "high",
+    "representative_themes": [
+      "after-work culture",
+      "group plans",
+      "price-value balance"
+    ],
+    "expected_conversion_base": 0.1875,
+    "source_file": "assets/data/survey_responses.json",
+    "source_sheet": "survey_responses",
+    "is_synthetic": true
+  }
+]

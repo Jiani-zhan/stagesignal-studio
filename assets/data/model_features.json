@@ -1,0 +1,178 @@
+{
+  "generated_at_utc": "2026-03-14T19:34:33+00:00",
+  "seed": 20260314,
+  "source": {
+    "source_file": "Final presentation/Data Collection & Visualization.xlsx",
+    "source_sheet": "Broadway Revenue",
+    "labels": {
+      "weekly_gross_regression": "This Week's Gross",
+      "average_ticket_regression": "Average Ticket",
+      "sellout_flag_classifier": "Derived: this_week_pct >= 1.0"
+    }
+  },
+  "models": [
+    {
+      "model_id": "weekly_gross_regression",
+      "target": "this_week_gross",
+      "feature_definitions": [
+        {
+          "name": "last_week_gross",
+          "description": "last week gross",
+          "standardized": true
+        },
+        {
+          "name": "top_ticket",
+          "description": "top ticket",
+          "standardized": true
+        },
+        {
+          "name": "last_week_pct",
+          "description": "last week pct",
+          "standardized": true
+        },
+        {
+          "name": "trend_weeks",
+          "description": "trend weeks",
+          "standardized": true
+        }
+      ],
+      "learned_parameters": {
+        "intercept": 2401350.3333333335,
+        "coefficients": {
+          "last_week_gross": 247697.25707803897,
+          "top_ticket": 342090.8060501182,
+          "last_week_pct": -32608.06487267192,
+          "trend_weeks": 8710.422670004624
+        }
+      },
+      "standardization": {
+        "means": {
+          "last_week_gross": 2387704.116847826,
+          "top_ticket": 605.4103260869565,
+          "last_week_pct": 0.9864293478260869,
+          "trend_weeks": 1878.0733695652175
+        },
+        "stds": {
+          "last_week_gross": 634008.6995949858,
+          "top_ticket": 243.95568824717847,
+          "last_week_pct": 0.12790254190461434,
+          "trend_weeks": 1163.8251528750927
+        }
+      }
+    },
+    {
+      "model_id": "average_ticket_regression",
+      "target": "average_ticket",
+      "feature_definitions": [
+        {
+          "name": "top_ticket",
+          "description": "top ticket",
+          "standardized": true
+        },
+        {
+          "name": "last_week_gross",
+          "description": "last week gross",
+          "standardized": true
+        },
+        {
+          "name": "last_week_pct",
+          "description": "last week pct",
+          "standardized": true
+        },
+        {
+          "name": "trend_weeks",
+          "description": "trend weeks",
+          "standardized": true
+        }
+      ],
+      "learned_parameters": {
+        "intercept": 226.86948509485106,
+        "coefficients": {
+          "top_ticket": 28.547450427261868,
+          "last_week_gross": 24.70709141597051,
+          "last_week_pct": -4.180392918419527,
+          "trend_weeks": 2.287857004826421
+        }
+      },
+      "standardization": {
+        "means": {
+          "top_ticket": 605.4103260869565,
+          "last_week_gross": 2387704.116847826,
+          "last_week_pct": 0.9864293478260869,
+          "trend_weeks": 1878.0733695652175
+        },
+        "stds": {
+          "top_ticket": 243.95568824717847,
+          "last_week_gross": 634008.6995949858,
+          "last_week_pct": 0.12790254190461434,
+          "trend_weeks": 1163.8251528750927
+        }
+      }
+    },
+    {
+      "model_id": "sellout_flag_classifier",
+      "target": "sellout_flag",
+      "feature_definitions": [
+        {
+          "name": "last_week_gross",
+          "description": "last week gross",
+          "standardized": true
+        },
+        {
+          "name": "average_ticket",
+          "description": "average ticket",
+          "standardized": true
+        },
+        {
+          "name": "top_ticket",
+          "description": "top ticket",
+          "standardized": true
+        },
+        {
+          "name": "total_seats",
+          "description": "total seats",
+          "standardized": true
+        },
+        {
+          "name": "last_week_pct",
+          "description": "last week pct",
+          "standardized": true
+        },
+        {
+          "name": "trend_weeks",
+          "description": "trend weeks",
+          "standardized": true
+        }
+      ],
+      "learned_parameters": {
+        "intercept": 2.6129652195348956,
+        "coefficients": {
+          "last_week_gross": 0.5015950197999958,
+          "average_ticket": 0.043867940358921595,
+          "top_ticket": 1.2988827769054816,
+          "total_seats": -0.2708263575507485,
+          "last_week_pct": 0.2192818204805619,
+          "trend_weeks": -1.0802444433257852
+        }
+      },
+      "standardization": {
+        "means": {
+          "last_week_gross": 2387704.116847826,
+          "average_ticket": 227.48597826086956,
+          "top_ticket": 605.4103260869565,
+          "total_seats": 10541.279891304348,
+          "last_week_pct": 0.9864293478260869,
+          "trend_weeks": 1878.0733695652175
+        },
+        "stds": {
+          "last_week_gross": 634008.6995949858,
+          "average_ticket": 54.89448453841841,
+          "top_ticket": 243.95568824717847,
+          "total_seats": 450.1490579555277,
+          "last_week_pct": 0.12790254190461434,
+          "trend_weeks": 1163.8251528750927
+        }
+      }
+    }
+  ]
+}

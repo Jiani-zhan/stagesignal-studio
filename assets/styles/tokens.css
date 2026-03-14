@@ -1,0 +1,154 @@
+:root {
+  --bg: #f7f3eb;
+  --bg-elevated: #fbf7f0;
+  --bg-panel: #f3ece1;
+  --text: #1f1a14;
+  --muted: #6b6257;
+  --line: rgba(72, 61, 49, 0.16);
+  --accent: #b16a2c;
+  --accent-2: #4f7f6e;
+  --danger: #a94f3b;
+  --success: #2f7860;
+
+  --font-display: "Instrument Serif", "Iowan Old Style", serif;
+  --font-ui: "Instrument Sans", "Avenir Next", "Segoe UI", sans-serif;
+
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --space-5: 3rem;
+  --space-6: 4rem;
+  --space-7: 6rem;
+
+  --radius-sm: 0.3rem;
+  --radius-md: 0.55rem;
+  --radius-lg: 0.75rem;
+
+  --shadow-soft: none;
+  --container-max: 78rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-ui);
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0.005em;
+  line-height: 1.12;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 5vw, 4.7rem);
+}
+
+h2 {
+  font-size: clamp(1.7rem, 3.4vw, 2.85rem);
+}
+
+h3 {
+  font-size: clamp(1.12rem, 2vw, 1.58rem);
+}
+
+p,
+li,
+a,
+button {
+  font-size: 1rem;
+}
+
+a {
+  color: inherit;
+}
+
+ul {
+  padding-left: 1.2rem;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.lead {
+  color: var(--muted);
+  font-size: clamp(1.04rem, 1.75vw, 1.18rem);
+  max-width: 40ch;
+}
+
+.section-number {
+  color: var(--accent-2);
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  margin-bottom: var(--space-2);
+  text-transform: uppercase;
+}
+
+.skip-link {
+  background: var(--accent);
+  color: #fffaf2;
+  left: var(--space-2);
+  padding: 0.42rem 0.72rem;
+  position: absolute;
+  top: -3rem;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: var(--space-2);
+}
+
+::selection {
+  background: rgba(177, 106, 44, 0.24);
+  color: var(--text);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

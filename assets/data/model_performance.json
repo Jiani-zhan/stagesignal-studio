@@ -1,0 +1,83 @@
+{
+  "generated_at_utc": "2026-03-14T19:34:33+00:00",
+  "seed": 20260314,
+  "split": {
+    "train_fraction": 0.8,
+    "holdout_fraction": 0.19999999999999996,
+    "train_rows": 368,
+    "holdout_rows": 93
+  },
+  "source": {
+    "source_file": "Final presentation/Data Collection & Visualization.xlsx",
+    "source_sheet": "Broadway Revenue",
+    "labels": {
+      "weekly_gross_regression": "This Week's Gross",
+      "average_ticket_regression": "Average Ticket",
+      "sellout_flag_classifier": "Derived: this_week_pct >= 1.0"
+    }
+  },
+  "thresholds": {
+    "r2_min": 0.8,
+    "accuracy_min": 0.8
+  },
+  "models": [
+    {
+      "model_id": "weekly_gross_regression",
+      "model_type": "regression",
+      "target": "this_week_gross",
+      "train_rows": 368,
+      "holdout_rows": 93,
+      "metrics": {
+        "r2": 0.8630550661869343,
+        "mae": 179390.78815224706,
+        "rmse": 236266.96628859756
+      },
+      "threshold": {
+        "metric": "r2",
+        "min_value": 0.8
+      },
+      "passed": true
+    },
+    {
+      "model_id": "average_ticket_regression",
+      "model_type": "regression",
+      "target": "average_ticket",
+      "train_rows": 368,
+      "holdout_rows": 93,
+      "metrics": {
+        "r2": 0.8704594267482535,
+        "mae": 15.678942956754446,
+        "rmse": 20.541508336967674
+      },
+      "threshold": {
+        "metric": "r2",
+        "min_value": 0.8
+      },
+      "passed": true
+    },
+    {
+      "model_id": "sellout_flag_classifier",
+      "model_type": "classification",
+      "target": "sellout_flag (derived from this_week_pct >= 1.0)",
+      "train_rows": 368,
+      "holdout_rows": 93,
+      "metrics": {
+        "accuracy": 0.8172043010752689,
+        "precision": 0.9285714285714286,
+        "recall": 0.8441558441558441,
+        "confusion_matrix": {
+          "tp": 65,
+          "fp": 5,
+          "tn": 11,
+          "fn": 12
+        }
+      },
+      "threshold": {
+        "metric": "accuracy",
+        "min_value": 0.8
+      },
+      "passed": true
+    }
+  ],
+  "all_models_passed": true
+}
